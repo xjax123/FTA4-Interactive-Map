@@ -7,6 +7,7 @@ class_name Planet2D
 @export_range(0.0,1.0) var StartingPositionAlongPath : float
 
 @export var Suborbitals : Array[SysSuborbital] = []
+var subs : Array[Suborbital2D] = []
 
 var circle : PlanetCircle
 
@@ -25,9 +26,13 @@ func _init(planetname : StringName = "DefaultName", pos : Vector2 = Vector2(0,0)
 	add_child(circle)
 	
 	for suborbital in suborbitals:
+		var temp
 		if suborbital.filetype == "Ring":
-			var temp = Rings2D.new(suborbital.modulatecolor,modulatecolor,suborbital.radius,suborbital.width,suborbital.resolution,7)
-			circle.add_child(temp)
+			temp = Rings2D.new(suborbital.modulatecolor,modulatecolor,suborbital.radius,suborbital.width,suborbital.resolution,7)
+		if suborbital.filetype == "Moon":
+			temp = Moon2D.new(suborbital.offset, modulatecolor, suborbital.radius, suborbital.ShowPath,suborbital.PathWidth, suborbital.Pathcolor,suborbital.MoonName,suborbital.MoonDesc,suborbital.MoonSize,suborbital.MoonColor,0,suborbital.MoonSpeed,suborbital.MoonDirection,suborbital.StartingOffset)
+		subs.append(temp)
+		circle.add_child(temp)
 
 var degrees : float 
 
@@ -69,6 +74,8 @@ func _progress_along_orbit(delta):
 		ani_time = 0
 	circle.position = currentposonpath
 	circle.update_occluder(degrees)
+	for sub in subs:
+		sub._progress_along_orbit(delta)
 
 func _draw() -> void:
 	super._draw()

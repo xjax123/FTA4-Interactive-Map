@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=20 format=3 uid="uid://c65kcuusg3csw"]
+[gd_resource type="Resource" script_class="SysManifest" load_steps=22 format=3 uid="uid://c65kcuusg3csw"]
 
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Orbital.gd" id="1_qgoij"]
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Suborbital.gd" id="2_v66vf"]
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Planet.gd" id="3_gfwwl"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Moon.gd" id="4_6wg56"]
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/AsteroidField.gd" id="4_x6jpr"]
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/SysManifest.gd" id="5_abhon"]
 [ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/PlanetRings.gd" id="5_pxpyy"]
@@ -36,13 +37,28 @@ DistanceFromStar = Vector2(150, 150)
 OrbitalSpeed = 1.4
 OrbitDirection = 0
 
+[sub_resource type="Resource" id="Resource_20ame"]
+script = ExtResource("4_6wg56")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.196078)
+MoonName = &"Luna"
+MoonDesc = ""
+MoonSize = 3.0
+MoonColor = Color(0.493545, 0.493546, 0.493546, 1)
+MoonSpeed = 0.5
+MoonDirection = 0
+StartingOffset = 0.365
+radius = 22.0
+offset = Vector2(0, 0)
+
 [sub_resource type="Resource" id="Resource_tk1uf"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Earth"
 PlanetSize = 12
 PlanetColor = Color(0.0291118, 0.351125, 1, 1)
 PositionAlongOrbit = 0.305
-Suborbitals = Array[ExtResource("2_v66vf")]([])
+Suborbitals = Array[ExtResource("2_v66vf")]([SubResource("Resource_20ame")])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
@@ -97,6 +113,7 @@ modulatecolor = Color(0.936377, 0.877829, 0.742197, 1)
 width = 12.0
 resolution = 180
 radius = 30.0
+offset = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_t6lr7"]
 script = ExtResource("3_gfwwl")

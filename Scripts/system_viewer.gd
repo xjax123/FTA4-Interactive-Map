@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var System : Resource
+@export var System : SysManifest
 var ModulateColor : Color = Color(1,1,1)
 var ModulateSunColor : Color = Color(1,1,1)
 var center

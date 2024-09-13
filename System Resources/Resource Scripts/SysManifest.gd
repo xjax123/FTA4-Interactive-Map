@@ -1,4 +1,5 @@
 extends Resource
+class_name SysManifest
 
 @export_category("System UI Information")
 @export_multiline var SystemDescription : String

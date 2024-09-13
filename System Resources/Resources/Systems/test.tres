@@ -1,0 +1,88 @@
+[gd_resource type="Resource" load_steps=11 format=3 uid="uid://cl5wi52lsywco"]
+
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Orbital.gd" id="1_toowg"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Planet.gd" id="2_2rkxh"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/AsteroidField.gd" id="3_7eksd"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Objects/StellarObject.gd" id="3_f2d2f"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/SysManifest.gd" id="3_xw62y"]
+
+[sub_resource type="Resource" id="Resource_y6kdl"]
+script = ExtResource("2_2rkxh")
+PlanetName = &"Test1"
+PlanetSize = 5
+PlanetColor = Color(1, 0.262745, 0, 1)
+PositionAlongOrbit = 0.255
+OrbitalOffset = Vector2(10, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 1.0
+DistanceFromStar = Vector2(140, 150)
+OrbitalSpeed = 2.5
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_wfp8h"]
+script = ExtResource("2_2rkxh")
+PlanetName = &"Test2"
+PlanetSize = 12
+PlanetColor = Color(0.843137, 0.737255, 0, 1)
+PositionAlongOrbit = 0.89
+OrbitalOffset = Vector2(-10, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 2.0
+DistanceFromStar = Vector2(220, 200)
+OrbitalSpeed = 1.8
+OrbitDirection = 1
+
+[sub_resource type="Resource" id="Resource_pkiyr"]
+script = ExtResource("3_7eksd")
+AsteroidAmmount = 200
+AsteroidSpawnRadius = 15.0
+AsteroidMinSize = 1.0
+AsteroidMaxSize = 4.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.0784314)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(300, 350)
+OrbitalSpeed = 1.0
+OrbitDirection = 1
+
+[sub_resource type="Resource" id="Resource_560ux"]
+resource_local_to_scene = true
+script = ExtResource("2_2rkxh")
+PlanetName = &"Test4"
+PlanetSize = 9
+PlanetColor = Color(0.698039, 0.145098, 0, 1)
+PositionAlongOrbit = 0.53
+OrbitalOffset = Vector2(20, 10)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 2.0
+DistanceFromStar = Vector2(400, 450)
+OrbitalSpeed = 0.3
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_40yq4"]
+resource_local_to_scene = true
+script = ExtResource("2_2rkxh")
+PlanetName = &"Test5"
+PlanetSize = 30
+PlanetColor = Color(0.458945, 0.163069, 0, 1)
+PositionAlongOrbit = 0.495
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 2.0
+DistanceFromStar = Vector2(600, 520)
+OrbitalSpeed = 0.1
+OrbitDirection = 1
+
+[resource]
+script = ExtResource("3_xw62y")
+SystemDescription = "Testing System"
+ModulateColor = Color(1, 1, 1, 1)
+ModulateSunColor = Color(1, 1, 1, 1)
+StarType = 3
+StarSpinSpeed = 0.3
+StarSpinDirection = 0
+StarSizes = Array[int]([50, 20, 40])
+StarGap = 40
+StarColors = Array[Color]([Color(0.928413, 0.664387, 0.214777, 1), Color(0.326928, 0.719123, 0.924166, 1), Color(0.901961, 0.258824, 0, 1)])
+Orbitals = Array[ExtResource("1_toowg")]([SubResource("Resource_y6kdl"), SubResource("Resource_wfp8h"), SubResource("Resource_pkiyr"), SubResource("Resource_560ux"), SubResource("Resource_40yq4")])
+StellarObjects = Array[ExtResource("3_f2d2f")]([])

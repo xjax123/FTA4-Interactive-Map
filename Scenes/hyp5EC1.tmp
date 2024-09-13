@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://dedrn87o0cf0d"]
+
+[ext_resource type="Script" path="res://addons/map_components/Scripts/planet.gd" id="1_lmx2k"]
+[ext_resource type="Theme" uid="uid://gdo2ady1vvs3" path="res://Themes/Planets.tres" id="2_j6e8q"]
+[ext_resource type="Script" path="res://addons/map_components/Scripts/connection.gd" id="3_lxx1h"]
+[ext_resource type="Script" path="res://Scenes/Main_Camera.gd" id="4_xw2te"]
+
+[node name="Hypergrid Map" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Planets" type="Node" parent="."]
+
+[node name="Deneb Algedi" type="Node2D" parent="Planets"]
+position = Vector2(336, 334)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+OutlineResolution = 2
+Name = "Deneb Algedi"
+NameSize = 16
+NameOffset = Vector2(-75, -20)
+Affiliation = 1
+
+[node name="XV-01" type="Node2D" parent="Planets"]
+position = Vector2(336, 429)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "XV-01"
+Affiliation = 1
+
+[node name="XV-02" type="Node2D" parent="Planets"]
+position = Vector2(466, 429)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "XV-02"
+Affiliation = 1
+
+[node name="HE-1" type="Node2D" parent="Planets"]
+position = Vector2(551, 301)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-1"
+
+[node name="Bazaar" type="Node2D" parent="Planets"]
+position = Vector2(629, 404)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "The Bazaar"
+NameSize = 16
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-20, 5)
+Affiliation = 1
+
+[node name="HR-1" type="Node2D" parent="Planets"]
+position = Vector2(555, 536)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-1"
+NameOffset = Vector2(-40, 10)
+Affiliation = 1
+
+[node name="HR-2" type="Node2D" parent="Planets"]
+position = Vector2(468, 690)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-2"
+NameOffset = Vector2(-40, 10)
+Affiliation = 1
+
+[node name="BT-01" type="Node2D" parent="Planets"]
+position = Vector2(374, 522)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "BT-01"
+Affiliation = 1
+
+[node name="BT-02" type="Node2D" parent="Planets"]
+position = Vector2(314, 629)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "BT-02"
+Affiliation = 1
+
+[node name="Connections" type="Node" parent="."]
+
+[node name="Deneb-XV1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/Deneb Algedi")
+metadata/_edit_lock_ = true
+
+[node name="XV1-XV2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/XV-02")
+metadata/_edit_lock_ = true
+
+[node name="XV2-HE1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-02")
+PlanetB = NodePath("../../Planets/HE-1")
+metadata/_edit_lock_ = true
+
+[node name="XV2-HR1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-1")
+PlanetB = NodePath("../../Planets/XV-02")
+metadata/_edit_lock_ = true
+
+[node name="XV2-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/XV-02")
+metadata/_edit_lock_ = true
+
+[node name="HE1-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-1")
+PlanetB = NodePath("../../Planets/Bazaar")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+metadata/_edit_lock_ = true
+
+[node name="HR1-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/HR-1")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+metadata/_edit_lock_ = true
+
+[node name="BT1-XV1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/BT-01")
+metadata/_edit_lock_ = true
+
+[node name="BT1-BT2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/BT-01")
+PlanetB = NodePath("../../Planets/BT-02")
+metadata/_edit_lock_ = true
+
+[node name="BT2-HR2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/BT-02")
+PlanetB = NodePath("../../Planets/HR-2")
+metadata/_edit_lock_ = true
+
+[node name="HR1-HR2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-1")
+PlanetB = NodePath("../../Planets/HR-2")
+metadata/_edit_lock_ = true
+
+[node name="Background Color" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 1941.0
+offset_bottom = 1093.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(962, 529)
+script = ExtResource("4_xw2te")
+min_zoom = null
+max_zoom = null
+zoom_factor = null
+zoom_duration = null

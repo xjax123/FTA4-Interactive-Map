@@ -1,0 +1,1662 @@
+[gd_scene load_steps=13 format=3 uid="uid://dedrn87o0cf0d"]
+
+[ext_resource type="Script" path="res://Scripts/Planets.gd" id="1_dchsa"]
+[ext_resource type="Script" path="res://Scripts/main_map.gd" id="1_j7ffs"]
+[ext_resource type="Script" path="res://addons/map_components/Scripts/planet.gd" id="1_lmx2k"]
+[ext_resource type="Theme" uid="uid://gdo2ady1vvs3" path="res://Themes/Planets.tres" id="2_j6e8q"]
+[ext_resource type="Script" path="res://addons/map_components/Scripts/connection.gd" id="3_lxx1h"]
+[ext_resource type="Script" path="res://Scripts/Background.gd" id="4_mc1dy"]
+[ext_resource type="Script" path="res://Scripts/Main_Camera.gd" id="4_xw2te"]
+[ext_resource type="Script" path="res://Scripts/NationBlob.gd" id="5_wjje0"]
+[ext_resource type="Texture2D" uid="uid://dtj633upj58kp" path="res://FTA4mappe.png" id="6_nry3s"]
+[ext_resource type="Theme" uid="uid://dqaco07xajbnj" path="res://Themes/Nation_Titles.tres" id="6_w28nd"]
+[ext_resource type="PackedScene" uid="uid://bn14tp5wkc7d8" path="res://Scenes/map_gui.tscn" id="7_dasy7"]
+[ext_resource type="PackedScene" uid="uid://bbrkaa2x5hhn8" path="res://Scenes/system_viewer.tscn" id="12_bveok"]
+
+[node name="Hypergrid Map" type="Node2D" node_paths=PackedStringArray("MainCamera")]
+script = ExtResource("1_j7ffs")
+MainCamera = NodePath("Main Camera")
+metadata/_edit_lock_ = true
+
+[node name="Planets" type="Node" parent="." node_paths=PackedStringArray("GUI")]
+script = ExtResource("1_dchsa")
+GUI = NodePath("../Map GUI")
+
+[node name="Deneb Algedi" type="Node2D" parent="Planets"]
+position = Vector2(336, 334)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+OutlineResolution = 2
+Name = "Deneb Algedi"
+NameSize = 16
+NameOffset = Vector2(-75, -20)
+Affiliation = 1
+
+[node name="XV-01" type="Node2D" parent="Planets"]
+position = Vector2(336, 403)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "XV-01"
+Affiliation = 1
+
+[node name="XV-02" type="Node2D" parent="Planets"]
+position = Vector2(471, 404)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "XV-02"
+Affiliation = 1
+
+[node name="HE-1" type="Node2D" parent="Planets"]
+position = Vector2(547, 320)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-1"
+NameOffset = Vector2(-48, 0)
+
+[node name="Bazaar" type="Node2D" parent="Planets"]
+position = Vector2(596, 380)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "The Bazaar"
+NameSize = 18
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-46, -24)
+Affiliation = 1
+Size = 15
+
+[node name="HR-1" type="Node2D" parent="Planets"]
+position = Vector2(533, 499)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-1"
+NameOffset = Vector2(-45, 10)
+Affiliation = 1
+
+[node name="HR-2" type="Node2D" parent="Planets"]
+position = Vector2(433, 618)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-2"
+NameOffset = Vector2(-40, 10)
+Affiliation = 1
+
+[node name="BT-01" type="Node2D" parent="Planets"]
+position = Vector2(356, 485)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "BT-01"
+Affiliation = 1
+
+[node name="BT-02" type="Node2D" parent="Planets"]
+position = Vector2(322, 574)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "BT-02"
+Affiliation = 1
+
+[node name="HE-2" type="Node2D" parent="Planets"]
+position = Vector2(499.155, 229.125)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-2"
+NameOffset = Vector2(-45, 0)
+
+[node name="HF-1" type="Node2D" parent="Planets"]
+position = Vector2(344.01, 172.785)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/F-1"
+
+[node name="Bzz1" type="Node2D" parent="Planets"]
+position = Vector2(669.064, 454.511)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Bzz1"
+NameOffset = Vector2(-50, -10)
+
+[node name="VC-1" type="Node2D" parent="Planets"]
+position = Vector2(539.179, 702.714)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-1"
+NameOffset = Vector2(-70, -15)
+
+[node name="VC-2" type="Node2D" parent="Planets"]
+position = Vector2(614, 535)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-2"
+NameOffset = Vector2(-50, 0)
+Affiliation = 2
+
+[node name="VC-3" type="Node2D" parent="Planets"]
+position = Vector2(605.802, 798.377)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-3"
+NameOffset = Vector2(-110, 0)
+
+[node name="VC-4" type="Node2D" parent="Planets"]
+position = Vector2(638.319, 679.888)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-4"
+NameOffset = Vector2(-100, -15)
+
+[node name="VC-5" type="Node2D" parent="Planets"]
+position = Vector2(691.264, 612.382)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-5"
+NameOffset = Vector2(-50, -10)
+Affiliation = 2
+
+[node name="VC-6" type="Node2D" parent="Planets"]
+position = Vector2(792.939, 660.724)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-6"
+NameOffset = Vector2(-50, -10)
+Affiliation = 2
+
+[node name="VC-7" type="Node2D" parent="Planets"]
+position = Vector2(886.958, 707.546)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-7"
+NameOffset = Vector2(-50, -10)
+
+[node name="VC-8" type="Node2D" parent="Planets"]
+position = Vector2(829.273, 764.107)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VC-8"
+
+[node name="HR-3" type="Node2D" parent="Planets"]
+position = Vector2(337.755, 715.273)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-3"
+
+[node name="DM-1" type="Node2D" parent="Planets"]
+position = Vector2(237.079, 737.487)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-1"
+NameOffset = Vector2(-112, 6)
+
+[node name="DM-2" type="Node2D" parent="Planets"]
+position = Vector2(153, 647)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-2"
+NameOffset = Vector2(-47, -2)
+
+[node name="DM-3" type="Node2D" parent="Planets"]
+position = Vector2(73, 617)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-3"
+
+[node name="DM-4" type="Node2D" parent="Planets"]
+position = Vector2(190, 581)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-4"
+
+[node name="DM-5" type="Node2D" parent="Planets"]
+position = Vector2(66, 719)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-5"
+
+[node name="DM-6" type="Node2D" parent="Planets"]
+position = Vector2(132, 809)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-6"
+
+[node name="DM-7" type="Node2D" parent="Planets"]
+position = Vector2(-28, 750)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DM-7"
+
+[node name="HR-4" type="Node2D" parent="Planets"]
+position = Vector2(327.74, 814.807)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "HR-4"
+
+[node name="HR-5" type="Node2D" parent="Planets"]
+position = Vector2(432.996, 879.234)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "HR-5"
+NameOffset = Vector2(-48, 7)
+
+[node name="Quaesitors" type="Node2D" parent="Planets"]
+position = Vector2(432, 1006)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Quaesitors Whole"
+NameSize = 16
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-152, -26)
+Size = 15
+
+[node name="HR-6" type="Node2D" parent="Planets"]
+position = Vector2(403.601, 1085.99)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-6"
+
+[node name="HR-7" type="Node2D" parent="Planets"]
+position = Vector2(372.225, 1185.22)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-7"
+
+[node name="HR-8" type="Node2D" parent="Planets"]
+position = Vector2(395.251, 1292.67)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/R-8"
+NameOffset = Vector2(-50, -15)
+
+[node name="Trimson" type="Node2D" parent="Planets"]
+position = Vector2(283, 1321)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Trimson Grondag"
+NameSize = 18
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-80, -40)
+Size = 15
+
+[node name="Bolthole1" type="Node2D" parent="Planets"]
+position = Vector2(414, 489)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Bolthole 1"
+NameOffset = Vector2(-33, 4)
+Size = 5
+
+[node name="Bolthole2" type="Node2D" parent="Planets"]
+position = Vector2(437.094, 293.42)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Bolthole 2"
+NameOffset = Vector2(-50, -14)
+Size = 5
+
+[node name="HE-3" type="Node2D" parent="Planets"]
+position = Vector2(608.235, 130.565)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-3"
+
+[node name="HE-4" type="Node2D" parent="Planets"]
+position = Vector2(685, 210)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-4"
+NameOffset = Vector2(-90, 25)
+
+[node name="HE-5" type="Node2D" parent="Planets"]
+position = Vector2(760.055, 226.949)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-5"
+NameOffset = Vector2(-47, 10)
+
+[node name="HE-6" type="Node2D" parent="Planets"]
+position = Vector2(828.091, 158.283)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-6"
+NameOffset = Vector2(-56, 26)
+
+[node name="HE-7" type="Node2D" parent="Planets"]
+position = Vector2(989.361, 121.116)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-7"
+NameOffset = Vector2(-60, -15)
+
+[node name="Greenfly" type="Node2D" parent="Planets"]
+position = Vector2(1144, 177)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Greenfly Landing"
+NameSize = 18
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-85, -41)
+Size = 15
+
+[node name="HE-8" type="Node2D" parent="Planets"]
+position = Vector2(1168.08, 294.102)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-8"
+NameOffset = Vector2(-44, 4)
+
+[node name="HE-9" type="Node2D" parent="Planets"]
+position = Vector2(1221, 436)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-9"
+NameOffset = Vector2(-47, 9)
+
+[node name="Victory" type="Node2D" parent="Planets"]
+position = Vector2(1169, 580)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Victory Station"
+NameSize = 18
+NameColor = Color(0.254902, 0.627451, 0.639216, 1)
+NameOffset = Vector2(-162, 4)
+Size = 15
+
+[node name="VS-1" type="Node2D" parent="Planets"]
+position = Vector2(1198, 702)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-1"
+NameOffset = Vector2(-96, 22)
+
+[node name="HF-2" type="Node2D" parent="Planets"]
+position = Vector2(716.834, 128.41)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/F-2"
+NameOffset = Vector2(-102, -25)
+
+[node name="KN-1" type="Node2D" parent="Planets"]
+position = Vector2(954.23, 67.0199)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "KN-1"
+NameOffset = Vector2(-49, 2)
+
+[node name="KN-2" type="Node2D" parent="Planets"]
+position = Vector2(841.77, 75.0289)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "KN-2"
+
+[node name="ASD-7" type="Node2D" parent="Planets"]
+position = Vector2(1081.95, 232.382)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-7"
+NameOffset = Vector2(-124, 3)
+
+[node name="VS-2" type="Node2D" parent="Planets"]
+position = Vector2(1116.17, 664.853)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-2"
+NameOffset = Vector2(-103, -12)
+
+[node name="VS-3" type="Node2D" parent="Planets"]
+position = Vector2(995, 675)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-3"
+
+[node name="ASD-1" type="Node2D" parent="Planets"]
+position = Vector2(933.553, 585.426)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-1"
+NameOffset = Vector2(-49, -6)
+
+[node name="ASD-2" type="Node2D" parent="Planets"]
+position = Vector2(878, 497)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-2"
+NameOffset = Vector2(-81, -16)
+
+[node name="ASD-3" type="Node2D" parent="Planets"]
+position = Vector2(955.553, 464.127)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-3"
+NameOffset = Vector2(-67, -16)
+
+[node name="ASD-4" type="Node2D" parent="Planets"]
+position = Vector2(877.66, 387.423)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-4"
+NameOffset = Vector2(-44, 3)
+
+[node name="ASD-5" type="Node2D" parent="Planets"]
+position = Vector2(945.445, 325.584)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-5"
+NameOffset = Vector2(-84, -16)
+
+[node name="ASD-6" type="Node2D" parent="Planets"]
+position = Vector2(1045.93, 342.233)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "ASD-6"
+NameOffset = Vector2(-46, 4)
+
+[node name="VS-4" type="Node2D" parent="Planets"]
+position = Vector2(1258.35, 635.432)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-4"
+NameOffset = Vector2(-48, 4)
+
+[node name="HE-10" type="Node2D" parent="Planets"]
+position = Vector2(1144.5, 486)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "H/E-10"
+
+[node name="AD-1" type="Node2D" parent="Planets"]
+position = Vector2(1022, 476)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "AD-1"
+NameOffset = Vector2(-81, 25)
+
+[node name="Rteol" type="Node2D" parent="Planets"]
+position = Vector2(799.362, 414.388)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "R'Teol"
+NameOffset = Vector2(-110, 16)
+Affiliation = 3
+
+[node name="Forcas" type="Node2D" parent="Planets"]
+position = Vector2(757.784, 348.242)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Forcas"
+NameOffset = Vector2(-52.965, -11)
+Affiliation = 3
+
+[node name="Z-1" type="Node2D" parent="Planets"]
+position = Vector2(794.952, 517.701)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "Z-1"
+NameOffset = Vector2(-101, 0)
+
+[node name="GF-1" type="Node2D" parent="Planets"]
+position = Vector2(1261.64, 125.728)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "GF-1"
+NameOffset = Vector2(-81, -18)
+
+[node name="GF-2" type="Node2D" parent="Planets"]
+position = Vector2(1368.27, 119.554)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "GF-2"
+NameOffset = Vector2(-80, -18)
+
+[node name="OS-1" type="Node2D" parent="Planets"]
+position = Vector2(1285.21, 372.108)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "OS-1"
+NameOffset = Vector2(-81, -17)
+
+[node name="OS-2" type="Node2D" parent="Planets"]
+position = Vector2(1401.39, 345.169)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "OS-2"
+NameOffset = Vector2(-81, -18)
+
+[node name="VS-5" type="Node2D" parent="Planets"]
+position = Vector2(1284.39, 730.516)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-5"
+NameOffset = Vector2(-76, -15)
+
+[node name="VS-6" type="Node2D" parent="Planets"]
+position = Vector2(1327.09, 804.682)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-6"
+
+[node name="VS-7" type="Node2D" parent="Planets"]
+position = Vector2(1324.09, 883.343)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-7"
+
+[node name="VS-8" type="Node2D" parent="Planets"]
+position = Vector2(1371.29, 953.763)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-8"
+
+[node name="VS-9" type="Node2D" parent="Planets"]
+position = Vector2(1106.45, 766.1)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-9"
+
+[node name="VS-10" type="Node2D" parent="Planets"]
+position = Vector2(1107.78, 850.29)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "VS-10"
+
+[node name="DVS-2" type="Node2D" parent="Planets"]
+position = Vector2(267.23, 905.444)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DVS-2"
+NameOffset = Vector2(-115, 2)
+
+[node name="DVS-1" type="Node2D" parent="Planets"]
+position = Vector2(294.541, 1009.78)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DVS-1"
+NameOffset = Vector2(-116, 6)
+
+[node name="MS-05" type="Node2D" parent="Planets"]
+position = Vector2(568.43, 1284.57)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "MS-5"
+NameOffset = Vector2(-104, -12)
+
+[node name="DJ-1" type="Node2D" parent="Planets"]
+position = Vector2(537.061, 985.57)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DJ-1"
+NameOffset = Vector2(-76, -19)
+
+[node name="DJ-2" type="Node2D" parent="Planets"]
+position = Vector2(578, 1072)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DJ-2"
+NameOffset = Vector2(-106, 3)
+
+[node name="DJ-3" type="Node2D" parent="Planets"]
+position = Vector2(577.774, 1198.48)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DJ-3"
+NameOffset = Vector2(-107, 4)
+
+[node name="DJ-4" type="Node2D" parent="Planets"]
+position = Vector2(701.914, 968.884)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DJ-4"
+NameOffset = Vector2(-93, -18)
+
+[node name="MS-4" type="Node2D" parent="Planets"]
+position = Vector2(448.267, 1162.67)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "MS-4"
+NameOffset = Vector2(-57, -17)
+
+[node name="DB-1" type="Node2D" parent="Planets"]
+position = Vector2(174.474, 1287.86)
+script = ExtResource("1_lmx2k")
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DB-1"
+NameOffset = Vector2(-78, -18)
+
+[node name="DB-2" type="Node2D" parent="Planets"]
+position = Vector2(81.2408, 1267.21)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DB-2"
+NameOffset = Vector2(-80, -16)
+
+[node name="DB-3" type="Node2D" parent="Planets"]
+position = Vector2(-25.765, 1264.03)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "DB-3"
+NameOffset = Vector2(-80, -16)
+
+[node name="TG-1" type="Node2D" parent="Planets"]
+position = Vector2(381, 1368)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-1"
+NameOffset = Vector2(-50, -1)
+
+[node name="TG-2" type="Node2D" parent="Planets"]
+position = Vector2(239.5, 1430.5)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-2"
+NameOffset = Vector2(-110, 5)
+
+[node name="TG-3" type="Node2D" parent="Planets"]
+position = Vector2(286.112, 1532.69)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-3"
+NameOffset = Vector2(-109, 8)
+
+[node name="TG-4" type="Node2D" parent="Planets"]
+position = Vector2(459.706, 1436.07)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-4"
+NameOffset = Vector2(-75, -15)
+
+[node name="TG-5" type="Node2D" parent="Planets"]
+position = Vector2(422, 1533)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-5"
+NameOffset = Vector2(-101, -10)
+
+[node name="TG-6" type="Node2D" parent="Planets"]
+position = Vector2(553.606, 1462.66)
+script = ExtResource("1_lmx2k")
+Visible = false
+PlanetTheme = ExtResource("2_j6e8q")
+Name = "TG-6"
+NameOffset = Vector2(-81, -14)
+
+[node name="Connections" type="Node" parent="."]
+
+[node name="Deneb-XV1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(336, 368.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/Deneb Algedi")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="XV1-XV2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(403.5, 403.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/XV-02")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="XV2-HE1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(509, 362)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-02")
+PlanetB = NodePath("../../Planets/HE-1")
+
+[node name="XV2-HR1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(502, 451.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-1")
+PlanetB = NodePath("../../Planets/XV-02")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="XV2-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(533.5, 392)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/XV-02")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="HE1-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(571.5, 350)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-1")
+PlanetB = NodePath("../../Planets/Bazaar")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR1-Bazaar" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(564.5, 439.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/HR-1")
+ConnectionColor = Color(0, 1, 0, 1)
+ConnectionThickness = 4.0
+
+[node name="BT1-XV1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(346, 444)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/BT-01")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="BT1-BT2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(339, 529.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/BT-01")
+PlanetB = NodePath("../../Planets/BT-02")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="BT2-HR2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(377.5, 596)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/BT-02")
+PlanetB = NodePath("../../Planets/HR-2")
+ConnectionColor = Color(0, 1, 0, 1)
+
+[node name="HR1-HR2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(483, 558.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-1")
+PlanetB = NodePath("../../Planets/HR-2")
+ConnectionColor = Color(0, 1, 0, 1)
+ConnectionThickness = 4.0
+
+[node name="HR2-VC1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(486.09, 660.357)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-2")
+PlanetB = NodePath("../../Planets/VC-1")
+
+[node name="VC1-VC3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(572.49, 750.546)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-1")
+PlanetB = NodePath("../../Planets/VC-3")
+
+[node name="VC1-VC4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(588.749, 691.301)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-1")
+PlanetB = NodePath("../../Planets/VC-4")
+
+[node name="VC3-VC4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(622.06, 739.133)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-3")
+PlanetB = NodePath("../../Planets/VC-4")
+
+[node name="Baz-VC2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(605, 457.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/VC-2")
+
+[node name="Bzz1-VC2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(641.532, 494.755)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-2")
+PlanetB = NodePath("../../Planets/Bzz1")
+
+[node name="Baz-Bzz" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(632.532, 417.255)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Bazaar")
+PlanetB = NodePath("../../Planets/Bzz1")
+
+[node name="VC2-VC5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(652.632, 573.691)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-2")
+PlanetB = NodePath("../../Planets/VC-5")
+ConnectionColor = Color(1, 0, 0, 1)
+
+[node name="VC4-VC5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(664.792, 646.135)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-4")
+PlanetB = NodePath("../../Planets/VC-5")
+
+[node name="VC6-VC7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(839.948, 684.135)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-6")
+PlanetB = NodePath("../../Planets/VC-7")
+
+[node name="VC5-VC6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(742.102, 636.553)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-5")
+PlanetB = NodePath("../../Planets/VC-6")
+ConnectionColor = Color(1, 0, 0, 1)
+
+[node name="VC7-VC8" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(858.115, 735.827)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VC-7")
+PlanetB = NodePath("../../Planets/VC-8")
+
+[node name="HE2-HF1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(421.583, 200.955)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-2")
+PlanetB = NodePath("../../Planets/HF-1")
+
+[node name="HE1-HE2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(523.078, 274.563)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-1")
+PlanetB = NodePath("../../Planets/HE-2")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR2-HR3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(385.378, 666.636)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-2")
+PlanetB = NodePath("../../Planets/HR-3")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR3-DM1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(287.417, 726.38)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-3")
+PlanetB = NodePath("../../Planets/DM-1")
+
+[node name="DM1-DM2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(195.039, 692.244)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-1")
+PlanetB = NodePath("../../Planets/DM-2")
+
+[node name="DM2-DM3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(113, 632)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-2")
+PlanetB = NodePath("../../Planets/DM-3")
+
+[node name="DM2-DM4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(171.5, 614)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-2")
+PlanetB = NodePath("../../Planets/DM-4")
+
+[node name="DM2-DM5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(109.5, 683)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-2")
+PlanetB = NodePath("../../Planets/DM-5")
+
+[node name="DM3-DM4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(131.5, 599)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-4")
+PlanetB = NodePath("../../Planets/DM-3")
+
+[node name="DM3-DM5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(69.5, 668)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-3")
+PlanetB = NodePath("../../Planets/DM-5")
+
+[node name="DM5-DM7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(19, 734.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-5")
+PlanetB = NodePath("../../Planets/DM-7")
+
+[node name="DM5-DM6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(99, 764)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DM-5")
+PlanetB = NodePath("../../Planets/DM-6")
+
+[node name="HR3-HR4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(332.747, 765.04)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-3")
+PlanetB = NodePath("../../Planets/HR-4")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR4-HR5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(380.368, 847.021)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-4")
+PlanetB = NodePath("../../Planets/HR-5")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR5-Quae" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(432.498, 942.617)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-5")
+PlanetB = NodePath("../../Planets/Quaesitors")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="Quae-HR6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(417.801, 1045.99)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Quaesitors")
+PlanetB = NodePath("../../Planets/HR-6")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR6-HR7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(387.913, 1135.6)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-6")
+PlanetB = NodePath("../../Planets/HR-7")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR7-HR8" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(383.738, 1238.95)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-7")
+PlanetB = NodePath("../../Planets/HR-8")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HR8-Trim" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(339.125, 1306.83)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-8")
+PlanetB = NodePath("../../Planets/Trimson")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="BT2-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(423.5, 553.5)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/HR-2")
+PlanetB = NodePath("../../Planets/Bolthole1")
+
+[node name="XV2-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(442.5, 446.5)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/XV-02")
+PlanetB = NodePath("../../Planets/Bolthole1")
+
+[node name="HR2-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(368, 531.5)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/BT-02")
+PlanetB = NodePath("../../Planets/Bolthole1")
+
+[node name="HF1-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(390.552, 233.103)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/Bolthole2")
+PlanetB = NodePath("../../Planets/HF-1")
+
+[node name="XV1-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(386.547, 348.21)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/XV-01")
+PlanetB = NodePath("../../Planets/Bolthole2")
+
+[node name="HE1-Bolthole" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(492.047, 306.71)
+script = ExtResource("3_lxx1h")
+Visible = false
+PlanetA = NodePath("../../Planets/Bolthole2")
+PlanetB = NodePath("../../Planets/HE-1")
+
+[node name="HE2-HE3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(553.695, 179.845)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-2")
+PlanetB = NodePath("../../Planets/HE-3")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE3-HE4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(646.617, 170.283)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-3")
+PlanetB = NodePath("../../Planets/HE-4")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE4-HE5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(722.527, 218.475)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-4")
+PlanetB = NodePath("../../Planets/HE-5")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE5-HE6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(794.073, 192.616)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-5")
+PlanetB = NodePath("../../Planets/HE-6")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE6-HE7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(908.726, 139.699)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-6")
+PlanetB = NodePath("../../Planets/HE-7")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE7-Greenfly" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1066.68, 149.058)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-7")
+PlanetB = NodePath("../../Planets/Greenfly")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="Greenfly-HE8" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1156.04, 235.551)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Greenfly")
+PlanetB = NodePath("../../Planets/HE-8")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE8-HE9" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1194.54, 365.051)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-8")
+PlanetB = NodePath("../../Planets/HE-9")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE9-Victory" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1195, 508)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-9")
+PlanetB = NodePath("../../Planets/Victory")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="Victory-VC1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1183.5, 641)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Victory")
+PlanetB = NodePath("../../Planets/VS-1")
+ConnectionColor = Color(0.254902, 0.627451, 0.639216, 1)
+ConnectionThickness = 4.0
+
+[node name="HE3-HF2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(662.534, 129.488)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-3")
+PlanetB = NodePath("../../Planets/HF-2")
+
+[node name="HE4-HF2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(700.917, 169.205)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-4")
+PlanetB = NodePath("../../Planets/HF-2")
+
+[node name="KN1-KN2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(898, 71.0244)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/KN-1")
+PlanetB = NodePath("../../Planets/KN-2")
+
+[node name="HE6-KN2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(834.931, 116.656)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-6")
+PlanetB = NodePath("../../Planets/KN-2")
+
+[node name="HE7-KN1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(971.796, 94.0679)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/KN-1")
+PlanetB = NodePath("../../Planets/HE-7")
+
+[node name="Greenfly-ASD7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1112.97, 204.691)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Greenfly")
+PlanetB = NodePath("../../Planets/ASD-7")
+
+[node name="HE7-ASD7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1035.66, 176.749)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-7")
+PlanetB = NodePath("../../Planets/ASD-7")
+
+[node name="HE8-ASD7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1125.01, 263.242)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-8")
+PlanetB = NodePath("../../Planets/ASD-7")
+
+[node name="HE9-HE10" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1182.75, 461)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-9")
+PlanetB = NodePath("../../Planets/HE-10")
+
+[node name="HE10-Victory" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1156.75, 533)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-10")
+PlanetB = NodePath("../../Planets/Victory")
+
+[node name="Victory-VS4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1213.68, 607.716)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-4")
+PlanetB = NodePath("../../Planets/Victory")
+
+[node name="VS2-Victory" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1142.58, 622.427)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Victory")
+PlanetB = NodePath("../../Planets/VS-2")
+
+[node name="VS4-VS1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1228.18, 668.716)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-1")
+PlanetB = NodePath("../../Planets/VS-4")
+
+[node name="VS1-VS2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1157.08, 683.427)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-1")
+PlanetB = NodePath("../../Planets/VS-2")
+
+[node name="VS2-VS3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1055.58, 669.927)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-2")
+PlanetB = NodePath("../../Planets/VS-3")
+
+[node name="ASD1-VS3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(964.276, 630.213)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-3")
+PlanetB = NodePath("../../Planets/ASD-1")
+
+[node name="ASD1-ASD2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(905.776, 541.213)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-1")
+PlanetB = NodePath("../../Planets/ASD-2")
+
+[node name="ASD3-ASD2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(916.776, 480.564)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-2")
+PlanetB = NodePath("../../Planets/ASD-3")
+
+[node name="ASD3-ASD4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(916.606, 425.775)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-3")
+PlanetB = NodePath("../../Planets/ASD-4")
+
+[node name="ASD4-ASD5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(911.552, 356.504)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-4")
+PlanetB = NodePath("../../Planets/ASD-5")
+
+[node name="ASD5-ASD6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(995.688, 333.909)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-5")
+PlanetB = NodePath("../../Planets/ASD-6")
+
+[node name="ASD6-ASD7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1063.94, 287.307)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-6")
+PlanetB = NodePath("../../Planets/ASD-7")
+
+[node name="ASD4-AD1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(988.776, 470.064)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/ASD-3")
+PlanetB = NodePath("../../Planets/AD-1")
+
+[node name="HE5-Forcas" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(758.919, 287.596)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-5")
+PlanetB = NodePath("../../Planets/Forcas")
+
+[node name="Forcas-Rteol" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(778.573, 381.315)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Forcas")
+PlanetB = NodePath("../../Planets/Rteol")
+ConnectionColor = Color(0, 0.501961, 0.501961, 1)
+
+[node name="Rteol-Z1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(797.157, 466.044)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Rteol")
+PlanetB = NodePath("../../Planets/Z-1")
+
+[node name="Greenfly-GF1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1202.82, 151.364)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Greenfly")
+PlanetB = NodePath("../../Planets/GF-1")
+
+[node name="GF1-GF2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1314.96, 122.641)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/GF-1")
+PlanetB = NodePath("../../Planets/GF-2")
+
+[node name="HE9-OS-1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1253.1, 404.054)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HE-9")
+PlanetB = NodePath("../../Planets/OS-1")
+
+[node name="OS1-OS2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1343.3, 358.638)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/OS-1")
+PlanetB = NodePath("../../Planets/OS-2")
+
+[node name="VS2-VS9" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1111.31, 715.477)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-2")
+PlanetB = NodePath("../../Planets/VS-9")
+
+[node name="VS9-VS10" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1107.11, 808.195)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-9")
+PlanetB = NodePath("../../Planets/VS-10")
+
+[node name="VS1-VS5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1241.2, 716.258)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-1")
+PlanetB = NodePath("../../Planets/VS-5")
+
+[node name="VS5-VS6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1305.74, 767.599)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-5")
+PlanetB = NodePath("../../Planets/VS-6")
+
+[node name="VS6-VS7" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1325.59, 844.013)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-6")
+PlanetB = NodePath("../../Planets/VS-7")
+
+[node name="VS7-VS8" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(1347.69, 918.553)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/VS-7")
+PlanetB = NodePath("../../Planets/VS-8")
+
+[node name="HR4-DVS2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(297.485, 860.125)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-4")
+PlanetB = NodePath("../../Planets/DVS-2")
+
+[node name="DVS2-DVS3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(280.885, 957.612)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DVS-2")
+PlanetB = NodePath("../../Planets/DVS-1")
+
+[node name="HR6-MS4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(425.934, 1124.33)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-6")
+PlanetB = NodePath("../../Planets/MS-4")
+
+[node name="HR8-MS5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(481.841, 1288.62)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-8")
+PlanetB = NodePath("../../Planets/MS-05")
+
+[node name="MS5-DJ3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(573.102, 1241.52)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DJ-3")
+PlanetB = NodePath("../../Planets/MS-05")
+
+[node name="DJ3-DJ2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(577.887, 1135.24)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DJ-2")
+PlanetB = NodePath("../../Planets/DJ-3")
+
+[node name="DJ1-DJ2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(557.531, 1028.79)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DJ-1")
+PlanetB = NodePath("../../Planets/DJ-2")
+
+[node name="HR5-DJ1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(485.029, 932.402)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DJ-1")
+PlanetB = NodePath("../../Planets/HR-5")
+
+[node name="DJ2-DJ4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(639.957, 1020.44)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DJ-2")
+PlanetB = NodePath("../../Planets/DJ-4")
+
+[node name="HR8-TG1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(388.125, 1330.33)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/HR-8")
+PlanetB = NodePath("../../Planets/TG-1")
+
+[node name="Trimson-TG1" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(332, 1344.5)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-1")
+PlanetB = NodePath("../../Planets/Trimson")
+
+[node name="Trimson-TG2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(261.25, 1375.75)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Trimson")
+PlanetB = NodePath("../../Planets/TG-2")
+
+[node name="TG2-TG3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(262.806, 1481.59)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-3")
+PlanetB = NodePath("../../Planets/TG-2")
+
+[node name="TG3-TG5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(354.056, 1532.84)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-3")
+PlanetB = NodePath("../../Planets/TG-5")
+
+[node name="TG1-TG4" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(420.353, 1402.03)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-1")
+PlanetB = NodePath("../../Planets/TG-4")
+
+[node name="TG4-TG5" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(440.853, 1484.53)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-4")
+PlanetB = NodePath("../../Planets/TG-5")
+
+[node name="TG4-TG6" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(506.656, 1449.36)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-6")
+PlanetB = NodePath("../../Planets/TG-4")
+
+[node name="TG1-TG2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(310.25, 1399.25)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/TG-1")
+PlanetB = NodePath("../../Planets/TG-2")
+
+[node name="DB1-Trimson" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(228.737, 1304.43)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/Trimson")
+PlanetB = NodePath("../../Planets/DB-1")
+
+[node name="DB1-DB2" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(127.857, 1277.53)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DB-1")
+PlanetB = NodePath("../../Planets/DB-2")
+
+[node name="DB2-DB3" type="Node2D" parent="Connections" node_paths=PackedStringArray("PlanetA", "PlanetB")]
+z_index = -1
+position = Vector2(27.7379, 1265.62)
+script = ExtResource("3_lxx1h")
+PlanetA = NodePath("../../Planets/DB-2")
+PlanetB = NodePath("../../Planets/DB-3")
+
+[node name="Nations" type="Node" parent="."]
+
+[node name="Human Green Zone" type="Polygon2D" parent="Nations"]
+z_index = -2
+color = Color(0, 1, 0, 0)
+antialiased = true
+polygon = PackedVector2Array(278, 330, 275.712, 345.339, 258.434, 537.643, 260, 571, 267.183, 584.312, 274, 592, 283.924, 599.178, 391.08, 642.788, 413.058, 645.782, 422, 646, 430.897, 643.938, 441.717, 640.214, 447, 638, 452.747, 633.844, 548, 551, 562.635, 536.365, 570, 527, 575.988, 517.827, 587.213, 496.883, 630.234, 392.309, 631.803, 381.919, 631, 374, 628.995, 366.852, 623.439, 356.935, 603.969, 339.337, 587.142, 330.626, 582.924, 329.375, 577.851, 329.297, 565.69, 329.886, 514.999, 343.886, 488.291, 346.332, 481.328, 346.03, 474.959, 344.452, 453.299, 335.318, 382.954, 291.981, 376.415, 288.162, 370.668, 285.668, 364.877, 284.109, 355.354, 281.994, 326.763, 278.077, 313.952, 279.695, 304.775, 283.909, 297.258, 288.163, 290.353, 295.334, 286.105, 305.051, 281.027, 319.523)
+script = ExtResource("5_wjje0")
+Affiliation = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Nations/Human Green Zone"]
+z_index = 5
+offset_left = 353.0
+offset_top = 432.0
+offset_right = 611.0
+offset_bottom = 467.0
+theme = ExtResource("6_w28nd")
+text = "Human \"Green\" Zone"
+metadata/_edit_lock_ = true
+
+[node name="Curch Of The Federation" type="Polygon2D" parent="Nations"]
+z_index = -2
+color = Color(0, 0.501961, 0.501961, 0)
+polygon = PackedVector2Array(763, 445, 775, 449, 789, 449, 836.703, 434.773, 844, 429, 847, 420, 846.244, 392.793, 845, 385, 842.239, 377.419, 811.403, 323.455, 804, 317, 793, 314, 742.679, 314, 733, 316, 726, 321, 721, 328, 718.554, 334.961, 712.399, 368.863, 712, 392, 719, 408, 746, 434)
+script = ExtResource("5_wjje0")
+Affiliation = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Nations/Curch Of The Federation"]
+z_index = 5
+offset_left = 700.0
+offset_top = 346.0
+offset_right = 1024.0
+offset_bottom = 405.0
+theme = ExtResource("6_w28nd")
+text = "Church Of The
+Federation Reborn"
+metadata/_edit_lock_ = true
+
+[node name="Courts Union" type="Polygon2D" parent="Nations"]
+z_index = -2
+color = Color(1, 0, 0, 0)
+polygon = PackedVector2Array(582, 538, 584.165, 531.91, 593.016, 519.018, 602, 513, 611.876, 510.551, 659.7, 510.551, 669, 512, 677.386, 515.519, 749.324, 554.758, 761, 561, 772.153, 568.947, 839.695, 615.398, 853, 626, 857, 636, 856, 645, 847.825, 658.129, 825.095, 687.216, 818, 692, 808.44, 691.718, 761.538, 682.784, 692.089, 660.561, 613.166, 620.753, 603, 610, 596.641, 596.556, 582.566, 544.508)
+script = ExtResource("5_wjje0")
+Affiliation = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Nations/Courts Union"]
+z_index = 5
+offset_left = 612.0
+offset_top = 553.0
+offset_right = 879.0
+offset_bottom = 588.0
+theme = ExtResource("6_w28nd")
+text = "Vergnitz Courts Union"
+metadata/_edit_lock_ = true
+
+[node name="Background Color" type="ColorRect" parent="."]
+z_index = -100
+offset_left = -9015.0
+offset_top = -8019.0
+offset_right = 20985.0
+offset_bottom = 21981.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_mc1dy")
+metadata/_edit_lock_ = true
+
+[node name="Main Camera" type="Camera2D" parent="."]
+visible = false
+position = Vector2(962, 529)
+script = ExtResource("4_xw2te")
+metadata/_edit_lock_ = true
+
+[node name="Fta4Mappe" type="Sprite2D" parent="."]
+visible = false
+z_index = -10
+position = Vector2(402, 761)
+texture = ExtResource("6_nry3s")
+metadata/_edit_lock_ = true
+
+[node name="Map GUI" parent="." instance=ExtResource("7_dasy7")]
+visible = false
+
+[node name="System Viewer" parent="." instance=ExtResource("12_bveok")]
+visible = false

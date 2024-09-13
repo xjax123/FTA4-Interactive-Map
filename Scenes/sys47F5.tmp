@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbrkaa2x5hhn8"]
+
+[ext_resource type="Script" path="res://Scripts/Background.gd" id="1_efyy8"]
+[ext_resource type="Script" path="res://Scripts/system_viewer.gd" id="1_qm6su"]
+[ext_resource type="Resource" uid="uid://c65kcuusg3csw" path="res://System Resources/Resources/Systems/Sol.tres" id="3_7txf7"]
+[ext_resource type="Script" path="res://Scripts/Main_Camera.gd" id="3_wurvj"]
+
+[node name="System Viewer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Background Color" type="ColorRect" parent="."]
+z_index = -100
+offset_left = -9015.0
+offset_top = -8019.0
+offset_right = 20985.0
+offset_bottom = 21981.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_efyy8")
+metadata/_edit_lock_ = true
+
+[node name="System Viewer" type="Node2D" parent="."]
+position = Vector2(1, 1)
+script = ExtResource("1_qm6su")
+System = ExtResource("3_7txf7")
+
+[node name="System Camera" type="Camera2D" parent="."]
+position = Vector2(961, 542)
+script = ExtResource("3_wurvj")
+min_zoom = 0.5
+max_zoom = 3.0

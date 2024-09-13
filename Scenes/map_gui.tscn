@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn14tp5wkc7d8"]
+
+[ext_resource type="Script" path="res://Scripts/map_gui.gd" id="1_vwopa"]
+
+[node name="Map GUI" type="CanvasLayer"]
+script = ExtResource("1_vwopa")
+
+[node name="Info Container" type="TabContainer" parent="."]
+offset_left = 1398.0
+offset_right = 1922.0
+offset_bottom = 1081.0
+size_flags_horizontal = 3
+
+[node name="Planet Info" type="VBoxContainer" parent="Info Container"]
+layout_mode = 2
+
+[node name="Player Holdings" type="VBoxContainer" parent="Info Container"]
+visible = false
+layout_mode = 2
+
+[node name="Fleets" type="VBoxContainer" parent="Info Container"]
+visible = false
+layout_mode = 2

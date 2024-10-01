@@ -1,6 +1,7 @@
 extends Node
 
 @export var GUI : CanvasLayer
+@export var Viewer : CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

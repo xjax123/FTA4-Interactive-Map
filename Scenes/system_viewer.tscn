@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbrkaa2x5hhn8"]
+[gd_scene load_steps=6 format=3 uid="uid://bbrkaa2x5hhn8"]
 
+[ext_resource type="Script" path="res://Scripts/sysloader.gd" id="1_405ex"]
 [ext_resource type="Script" path="res://Scripts/Background.gd" id="1_efyy8"]
 [ext_resource type="Script" path="res://Scripts/system_viewer.gd" id="1_qm6su"]
-[ext_resource type="Resource" uid="uid://c65kcuusg3csw" path="res://System Resources/Resources/Systems/Sol.tres" id="3_7txf7"]
 [ext_resource type="Script" path="res://Scripts/Main_Camera.gd" id="3_wurvj"]
+[ext_resource type="Resource" uid="uid://c65kcuusg3csw" path="res://System Resources/Resources/Systems/Sol.tres" id="4_lpfn8"]
 
 [node name="System Viewer" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_405ex")
 
 [node name="Background Color" type="ColorRect" parent="."]
 z_index = -100
@@ -22,14 +24,9 @@ metadata/_edit_lock_ = true
 [node name="System Viewer" type="Node2D" parent="."]
 position = Vector2(1, 1)
 script = ExtResource("1_qm6su")
-System = ExtResource("3_7txf7")
+System = ExtResource("4_lpfn8")
 
 [node name="System Camera" type="Camera2D" parent="."]
 position = Vector2(961, 542)
 script = ExtResource("3_wurvj")
-min_zoom = 0.5
 max_zoom = 3.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0

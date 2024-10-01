@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="SysManifest" load_steps=11 format=3 uid="uid://b6jxt7cw7wi6e"]
+
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Orbital.gd" id="1_ex2xo"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Suborbital.gd" id="2_e72cr"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Planet.gd" id="3_h5gl1"]
+[ext_resource type="Texture2D" uid="uid://blnbt8br51i2j" path="res://White.png" id="4_faw5e"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Objects/StellarObject.gd" id="4_ggetx"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/OrbitalObject.gd" id="5_qgxkm"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/SysManifest.gd" id="5_skoef"]
+
+[sub_resource type="Resource" id="Resource_te3b1"]
+script = ExtResource("3_h5gl1")
+PlanetName = &"Outlook"
+PlanetSize = 5
+PlanetType = 0
+PlanetColor = Color(0.768022, 0.50124, 0.22505, 1)
+RotationSpeed = 4.0
+RotationDirection = 0
+PositionAlongOrbit = 0.32
+Suborbitals = Array[ExtResource("2_e72cr")]([])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(75, 60)
+OrbitalSpeed = 2.0
+OrbitDirection = 0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0inrq"]
+diffuse_texture = ExtResource("4_faw5e")
+
+[sub_resource type="Resource" id="Resource_abqto"]
+script = ExtResource("5_qgxkm")
+ObjectName = &"Deneb Station"
+ObjectDesctiption = ""
+CanvasTex = SubResource("CanvasTexture_0inrq")
+PositionAlongPath = 0.831
+ObjectTouchRange = 10.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(130, 130)
+OrbitalSpeed = 2.0
+OrbitDirection = 0
+
+[resource]
+script = ExtResource("5_skoef")
+SystemDescription = "A system of little value in the system itself, it serves as an important strategic stronghold between the T-Grid and the Hypergrid."
+ModulateColor = Color(0.15, 0.15, 0.15, 1)
+ModulateSunColor = Color(1, 1, 1, 1)
+TimeModifier = 1000.0
+StarType = 0
+StarSpinSpeed = 0.1
+StarSpinDirection = 0
+StarSizes = Array[int]([20])
+StarGap = 10
+StarColors = Array[Color]([Color(0.813062, 0.0670181, 0, 1)])
+Orbitals = Array[ExtResource("1_ex2xo")]([SubResource("Resource_te3b1"), SubResource("Resource_abqto")])
+StaticObjects = Array[ExtResource("4_ggetx")]([])

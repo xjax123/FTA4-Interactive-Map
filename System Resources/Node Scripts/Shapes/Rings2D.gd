@@ -8,8 +8,8 @@ var lightmask : int = 1
 var modcolor : Color = Color(1,1,1)
 var ringline : Line2D
 
-func _init(_color : Color = Color(1,1,1),_modcolor : Color = Color(1,1,1), _radius : float = 10.0, _width : float = 3.0, _resolution : int = 180, _lightmask : int = 1) -> void:
-	super._init(_radius,false,0,Color(0,0,0))
+func _init(_color : Color = Color(1,1,1),_modcolor : Color = Color(1,1,1), _radius : float = 10.0, _zindex : int = 1, _width : float = 3.0, _resolution : int = 180, _lightmask : int = 1) -> void:
+	super._init(_radius,false,0,Color(0,0,0,0),_zindex)
 	ringcolor = _color
 	modcolor = _modcolor
 	width = _width

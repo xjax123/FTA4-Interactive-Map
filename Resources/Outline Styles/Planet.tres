@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="OutlineR" load_steps=3 format=3 uid="uid://bta7smpbuqkks"]
+
+[ext_resource type="Texture2D" uid="uid://5m0ug50co774" path="res://Textures/Line Textures/Solid.tres" id="1_40s6s"]
+[ext_resource type="Script" path="res://addons/map_components/Scripts/outlineRS.gd" id="2_c4cql"]
+
+[resource]
+script = ExtResource("2_c4cql")
+Tex = ExtResource("1_40s6s")
+width = 2.0
+backed = false
+BackingColor = Color(1, 1, 1, 1)

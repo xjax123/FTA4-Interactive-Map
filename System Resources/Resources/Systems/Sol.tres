@@ -13,50 +13,63 @@
 script = ExtResource("3_gfwwl")
 PlanetName = &"Mercury"
 PlanetSize = 5
-PlanetColor = Color(0.448605, 0.153477, 0.0646031, 1)
+PlanetType = 0
+PlanetColor = Color(0.493003, 0.596619, 0.776356, 1)
+RotationSpeed = 2.07
+RotationDirection = 0
 PositionAlongOrbit = 0.04
 Suborbitals = Array[ExtResource("2_v66vf")]([])
-OrbitalOffset = Vector2(0, 0)
+OrbitalOffset = Vector2(-5, -10)
 OrbitalPathColor = Color(0.450648, 0.450648, 0.450648, 0.392157)
 OrbitalPathThickness = 3.0
 DistanceFromStar = Vector2(100, 100)
 OrbitalSpeed = 4.2
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_m4fef"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Venus"
 PlanetSize = 8
+PlanetType = 0
 PlanetColor = Color(0.766478, 0.632864, 0.154925, 1)
+RotationSpeed = 1.5
+RotationDirection = 0
 PositionAlongOrbit = 0.075
 Suborbitals = Array[ExtResource("2_v66vf")]([])
-OrbitalOffset = Vector2(0, 0)
+OrbitalOffset = Vector2(0, 10)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
 DistanceFromStar = Vector2(150, 150)
 OrbitalSpeed = 1.4
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_20ame"]
 script = ExtResource("4_6wg56")
 ShowPath = true
-PathWidth = 2.0
-Pathcolor = Color(1, 1, 1, 0.196078)
+PathWidth = 1.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
 MoonName = &"Luna"
 MoonDesc = ""
-MoonSize = 3.0
+MoonType = 0
+MoonSize = 2.0
 MoonColor = Color(0.493545, 0.493546, 0.493546, 1)
-MoonSpeed = 0.5
-MoonDirection = 0
+MoonSpeed = 13.5
+RotationSpeed = 1.0
+MoonDirection = 1
+RotationDirection = 0
 StartingOffset = 0.365
-radius = 22.0
+radius = 18.0
 offset = Vector2(0, 0)
+zindex = 1
 
 [sub_resource type="Resource" id="Resource_tk1uf"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Earth"
 PlanetSize = 12
+PlanetType = 0
 PlanetColor = Color(0.0291118, 0.351125, 1, 1)
+RotationSpeed = 365.0
+RotationDirection = 0
 PositionAlongOrbit = 0.305
 Suborbitals = Array[ExtResource("2_v66vf")]([SubResource("Resource_20ame")])
 OrbitalOffset = Vector2(0, 0)
@@ -64,48 +77,54 @@ OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
 DistanceFromStar = Vector2(200, 200)
 OrbitalSpeed = 1.0
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_clfia"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Mars"
 PlanetSize = 10
+PlanetType = 0
 PlanetColor = Color(0.696439, 0.202688, 0.0890986, 1)
+RotationSpeed = 357.55
+RotationDirection = 0
 PositionAlongOrbit = 0.44
 Suborbitals = Array[ExtResource("2_v66vf")]([])
-OrbitalOffset = Vector2(0, 0)
+OrbitalOffset = Vector2(20, -20)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(250, 250)
+DistanceFromStar = Vector2(280, 280)
 OrbitalSpeed = 0.53
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_sfk5c"]
 script = ExtResource("4_x6jpr")
 AsteroidAmmount = 500
-AsteroidSpawnRadius = 25.0
+AsteroidSpawnRadius = 60.0
 AsteroidMinSize = 1.0
 AsteroidMaxSize = 4.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.0784314)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(400, 400)
+DistanceFromStar = Vector2(500, 500)
 OrbitalSpeed = 0.2
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_0wqc6"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Jupiter"
 PlanetSize = 30
+PlanetType = 2
 PlanetColor = Color(0.465706, 0.252848, 0.0444646, 1)
+RotationSpeed = 879.5
+RotationDirection = 0
 PositionAlongOrbit = 0.76
 Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(550, 550)
+DistanceFromStar = Vector2(800, 800)
 OrbitalSpeed = 0.08
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_3l1d4"]
 script = ExtResource("5_pxpyy")
@@ -114,86 +133,100 @@ width = 12.0
 resolution = 180
 radius = 30.0
 offset = Vector2(0, 0)
+zindex = 1
 
 [sub_resource type="Resource" id="Resource_t6lr7"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Saturn"
 PlanetSize = 20
+PlanetType = 2
 PlanetColor = Color(0.521155, 0.430367, 0.237267, 1)
+RotationSpeed = 822.07
+RotationDirection = 0
 PositionAlongOrbit = 0.49
 Suborbitals = Array[ExtResource("2_v66vf")]([SubResource("Resource_3l1d4")])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(650, 650)
+DistanceFromStar = Vector2(1250, 1250)
 OrbitalSpeed = 0.03
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_n0dqg"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Uranus"
 PlanetSize = 20
+PlanetType = 2
 PlanetColor = Color(0.428629, 0.798949, 0.818725, 1)
+RotationSpeed = 508.31
+RotationDirection = 0
 PositionAlongOrbit = 0.92
 Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(750, 750)
+DistanceFromStar = Vector2(1800, 1800)
 OrbitalSpeed = 0.01
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_2rgyh"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Neptune"
 PlanetSize = 20
+PlanetType = 2
 PlanetColor = Color(0.255387, 0.357935, 0.965671, 1)
+RotationSpeed = 544.09
+RotationDirection = 0
 PositionAlongOrbit = 0.605
 Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(850, 850)
+DistanceFromStar = Vector2(2800, 2800)
 OrbitalSpeed = 0.006
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_lp72v"]
 script = ExtResource("3_gfwwl")
 PlanetName = &"Pluto"
 PlanetSize = 3
+PlanetType = 0
 PlanetColor = Color(0.520396, 0.258955, 0.0699002, 1)
+RotationSpeed = 60.83
+RotationDirection = 0
 PositionAlongOrbit = 0.554
 Suborbitals = Array[ExtResource("2_v66vf")]([])
-OrbitalOffset = Vector2(0, 0)
+OrbitalOffset = Vector2(1000, -1000)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(1000, 1000)
+DistanceFromStar = Vector2(4000, 4000)
 OrbitalSpeed = 0.004
-OrbitDirection = 0
+OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_byet2"]
 script = ExtResource("4_x6jpr")
-AsteroidAmmount = 1000
-AsteroidSpawnRadius = 10.0
-AsteroidMinSize = 1.0
-AsteroidMaxSize = 4.0
+AsteroidAmmount = 2000
+AsteroidSpawnRadius = 750.0
+AsteroidMinSize = 2.0
+AsteroidMaxSize = 6.0
 OrbitalOffset = Vector2(0, 0)
-OrbitalPathColor = Color(1, 1, 1, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.0784314)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(1000, 1000)
+DistanceFromStar = Vector2(4000, 4000)
 OrbitalSpeed = 0.004
-OrbitDirection = 0
+OrbitDirection = 1
 
 [resource]
 script = ExtResource("5_abhon")
 SystemDescription = ""
 ModulateColor = Color(0.111197, 0.111197, 0.111197, 1)
 ModulateSunColor = Color(1, 1, 1, 1)
+TimeModifier = 1000.0
 StarType = 0
 StarSpinSpeed = 0.1
 StarSpinDirection = 0
 StarSizes = Array[int]([50, 5, 5])
 StarGap = 10
-StarColors = Array[Color]([Color(0.99198, 0.712504, 0.195586, 1), Color(0.866667, 0.623529, 0, 1), Color(0.901961, 0.258824, 0, 1)])
+StarColors = Array[Color]([Color(0.824841, 0.389271, 0.213149, 1), Color(0.866667, 0.623529, 0, 1), Color(0.901961, 0.258824, 0, 1)])
 Orbitals = Array[ExtResource("1_qgoij")]([SubResource("Resource_r4lr6"), SubResource("Resource_m4fef"), SubResource("Resource_tk1uf"), SubResource("Resource_clfia"), SubResource("Resource_sfk5c"), SubResource("Resource_0wqc6"), SubResource("Resource_t6lr7"), SubResource("Resource_n0dqg"), SubResource("Resource_2rgyh"), SubResource("Resource_lp72v"), SubResource("Resource_byet2")])
 StaticObjects = Array[ExtResource("6_vscm3")]([])

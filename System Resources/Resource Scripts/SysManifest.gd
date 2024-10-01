@@ -7,6 +7,8 @@ class_name SysManifest
 @export_category("System Display Information")
 @export var ModulateColor : Color = Color(0.15,0.15,0.15)
 @export var ModulateSunColor : Color = Color(1,1,1)
+## Set how long Earth years take (in seconds), Speed 1 = 1 Earth Year
+@export var TimeModifier : float = 1000
 
 @export_category("System Mechanical Information")
 @export var StarType : SysView.SystemType = SysView.SystemType.Mono

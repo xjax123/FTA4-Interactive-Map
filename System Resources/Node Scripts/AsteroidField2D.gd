@@ -1,6 +1,8 @@
 extends Orbital2D
 class_name AsteroidField2D
 
+var timemod : float = 1000
+
 @export var AsteroidAmmount : float = 500
 @export var AsteroidSpawnRadius : float = 10
 @export var AsteroidMinSize : float = 1
@@ -14,6 +16,7 @@ func _init(ammount : int = 500, spawnradius : float = 10, minsize : float = 1, m
 	AsteroidSpawnRadius = spawnradius
 	AsteroidMinSize = minsize
 	AsteroidMaxSize = maxsize
+	timemod = SysView.globaltimemod
 
 func _ready() -> void:
 	super._ready()
@@ -44,8 +47,8 @@ func _progress_along_orbit(delta):
 	for asteroid in Asteroids:
 		var mod = 0
 		if(OrbitDirection == SysView.OrbitDirection.Right):
-			mod = 100
-		var currentperiod = lerpf(0,1,abs(mod-ani_time)/100) + asteroid.startingposition
+			mod = timemod
+		var currentperiod = lerpf(0,1,abs(mod-ani_time)/timemod) + asteroid.startingposition
 		if (currentperiod >= 1.0):
 			currentperiod -= 1.0
 		elif (currentperiod < 0):
@@ -60,7 +63,7 @@ func _progress_along_orbit(delta):
 		var currentposonpath = Vector2(px,py)
 		asteroid.position = currentposonpath
 		asteroid.update_occluder(degrees)
-	if (ani_time >= 100):
+	if (ani_time >= timemod):
 		ani_time = 0
 
 func _draw() -> void:

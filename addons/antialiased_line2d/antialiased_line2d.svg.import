@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7khkta6t6h3"
-path="res://.godot/imported/PlanetBase.png-2d9962312491a5214f2b5de156ad0939.ctex"
+uid="uid://guodfckewtpv"
+path="res://.godot/imported/antialiased_line2d.svg-9243613cd101e058db6c37ff468932c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Planet Textures/PlanetBase.png"
-dest_files=["res://.godot/imported/PlanetBase.png-2d9962312491a5214f2b5de156ad0939.ctex"]
+source_file="res://addons/antialiased_line2d/antialiased_line2d.svg"
+dest_files=["res://.godot/imported/antialiased_line2d.svg-9243613cd101e058db6c37ff468932c4.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

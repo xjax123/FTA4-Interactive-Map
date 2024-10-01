@@ -22,7 +22,7 @@ extends Polygon2D
 		queue_redraw()
 
 var claim_color
-var outline
+var outline : AntialiasedLine2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,7 +30,7 @@ func _ready():
 	color = claim_color
 	self_modulate.a = 1
 	color.a = 0
-	outline = Line2D.new()
+	outline = AntialiasedLine2D.new()
 	add_child(outline)
 	outline.points = polygon
 	var lineColor = Color.WHITE
@@ -49,4 +49,3 @@ func _draw():
 	var polyColor = claim_color
 	polyColor.a = 0.1
 	draw_polygon(polygon,[polyColor])
-

@@ -51,7 +51,7 @@ func _ready() -> void:
 	TouchArea.connect("mouse_exited", on_hover_end)
 	TouchArea.connect("input_event", mouse_click)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.scale = Vector2(6-get_viewport().get_camera_2d().zoom_level,6-get_viewport().get_camera_2d().zoom_level)/4
 
 func on_hover_start():

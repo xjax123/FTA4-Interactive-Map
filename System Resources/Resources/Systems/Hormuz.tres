@@ -1,0 +1,145 @@
+[gd_resource type="Resource" script_class="SysManifest" load_steps=17 format=3 uid="uid://d17frj8empn5w"]
+
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Orbital.gd" id="1_qeoxj"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/AsteroidField.gd" id="2_u361w"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Suborbital.gd" id="3_afgyw"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Planet.gd" id="4_y4h6p"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Objects/StellarObject.gd" id="5_6e084"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/PlanetRings.gd" id="5_ljc88"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/SysManifest.gd" id="6_5idfw"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Moon.gd" id="6_hi6i4"]
+
+[sub_resource type="Resource" id="Resource_b407e"]
+script = ExtResource("2_u361w")
+AsteroidAmmount = 100
+AsteroidSpawnRadius = 10.0
+AsteroidMinSize = 1.0
+AsteroidMaxSize = 4.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(150, 130)
+OrbitalSpeed = 5.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_tlsjv"]
+script = ExtResource("2_u361w")
+AsteroidAmmount = 250
+AsteroidSpawnRadius = 10.0
+AsteroidMinSize = 1.0
+AsteroidMaxSize = 4.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 1.3
+DistanceFromStar = Vector2(200, 250)
+OrbitalSpeed = 1.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_n7hoa"]
+script = ExtResource("4_y4h6p")
+PlanetName = &"Hormuz"
+PlanetSize = 10
+PlanetType = 0
+PlanetColor = Color(0.180392, 1, 0.482353, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.345
+Suborbitals = Array[ExtResource("3_afgyw")]([])
+OrbitalOffset = Vector2(0, 50)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(450, 420)
+OrbitalSpeed = 1.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_oehr0"]
+script = ExtResource("5_ljc88")
+modulatecolor = Color(0.115612, 0.577375, 0.561642, 1)
+width = 10.0
+resolution = 180
+radius = 60.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_16ug1"]
+script = ExtResource("6_hi6i4")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Vion SY"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 5.0
+MoonColor = Color(0.509286, 0.509286, 0.509286, 1)
+MoonSpeed = 3.0
+RotationSpeed = 1.0
+MoonDirection = 1
+RotationDirection = 0
+StartingOffset = 0.115
+radius = 75.0
+offset = Vector2(5, 5)
+zindex = 4
+
+[sub_resource type="Resource" id="Resource_fp03t"]
+script = ExtResource("4_y4h6p")
+PlanetName = &"Ephone"
+PlanetSize = 40
+PlanetType = 2
+PlanetColor = Color(0.423529, 0.760784, 0.941176, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.495
+Suborbitals = Array[ExtResource("3_afgyw")]([SubResource("Resource_oehr0"), SubResource("Resource_16ug1")])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(600, 700)
+OrbitalSpeed = 0.21
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_qkirw"]
+script = ExtResource("4_y4h6p")
+PlanetName = &"Piupra"
+PlanetSize = 13
+PlanetType = 0
+PlanetColor = Color(1, 1, 1, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.0
+Suborbitals = Array[ExtResource("3_afgyw")]([])
+OrbitalOffset = Vector2(-50, -50)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(800, 820)
+OrbitalSpeed = 0.45
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_l4v83"]
+script = ExtResource("2_u361w")
+AsteroidAmmount = 1000
+AsteroidSpawnRadius = 10.0
+AsteroidMinSize = 1.0
+AsteroidMaxSize = 4.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.392157)
+OrbitalPathThickness = 3.0
+DistanceFromStar = Vector2(1000, 1000)
+OrbitalSpeed = 0.1
+OrbitDirection = 0
+
+[resource]
+script = ExtResource("6_5idfw")
+SystemDescription = "Preliminary orbital surveys indicate that the primary habitable world was once an agro-world, though one who's primary purpose is long abandoned. There are various climate-adjustment facilities in orbit, though they seem very derelict. 
+
+Later surveys reveal XV-02 has been effectively abandoned for centuries, though even today there are random ships occasionally landing on it to collect up food, water or simply hide out while conducting repairs or R&R. You have a pretty strong suspicion that there are various small communities who are laying low with the sudden arrival of a rather large number of large ships."
+ModulateColor = Color(0.15, 0.15, 0.15, 1)
+ModulateSunColor = Color(1, 1, 1, 1)
+TimeModifier = 1000.0
+StarType = 1
+StarSpinSpeed = 0.2
+StarSpinDirection = 1
+StarSizes = Array[int]([50, 40, 5])
+StarGap = 60
+StarColors = Array[Color]([Color(0.564657, 0.765955, 0.94196, 1), Color(1, 0.742713, 0.212299, 1), Color(0.901961, 0.258824, 0, 1)])
+Orbitals = Array[ExtResource("1_qeoxj")]([SubResource("Resource_b407e"), SubResource("Resource_tlsjv"), SubResource("Resource_n7hoa"), SubResource("Resource_fp03t"), SubResource("Resource_qkirw"), SubResource("Resource_l4v83")])
+StaticObjects = Array[ExtResource("5_6e084")]([])

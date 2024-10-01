@@ -69,7 +69,7 @@ func _ready() -> void:
 	if (!islight):
 		sprite = Sprite2D.new()
 		var canvas = CanvasTexture.new()
-		canvas.diffuse_texture = preload("res://Textures/Planet Textures/PlanetBase.png")
+		canvas.diffuse_texture = preload("res://Textures/Planet Textures/BlankPlanetBase.png")
 		canvas.normal_texture = preload("res://Textures/Planet Textures/PlanetNormal.jpg")
 		canvas.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 		sprite.texture = canvas
@@ -116,13 +116,28 @@ func _ready() -> void:
 		light.range_layer_max = 1
 		light.range_layer_min = 1
 		light.shadow_enabled = true
-		light.scale = Vector2(20,20)
+		light.scale = Vector2(100,100)
 		add_child(light)
+		
+		
+		sprite = Sprite2D.new()
+		var canvas = CanvasTexture.new()
+		canvas.diffuse_texture = preload("res://Textures/Planet Textures/SunBase.png")
+		canvas.normal_texture = preload("res://Textures/Planet Textures/PlanetNormal.jpg")
+		canvas.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		sprite.texture = canvas
+		sprite.self_modulate = color
+		sprite.light_mask = lightmask
+		sprite.scale = Vector2(radius/5.0*0.02,radius/5.0*0.02)
+		add_child(sprite)
 	
 	TouchArea = Area2D.new()
 	var Shape = CollisionShape2D.new()
 	var circ = CircleShape2D.new()
-	circ.radius = radius+10
+	if (radius+10 > radius*2):
+		circ.radius = radius*2
+	else:
+		circ.radius = radius+10
 	Shape.shape = circ
 	TouchArea.add_child(Shape)
 	add_child(TouchArea)
@@ -135,7 +150,7 @@ func _process(_delta: float) -> void:
 
 func update_occluder(radians):
 	if (occluderradius != 0 && isoccluder):
-		occluder.rotation = radians+deg_to_rad(180)+deg_to_rad(occluderoffset)
+		occluder.global_rotation = radians+deg_to_rad(180)+deg_to_rad(occluderoffset)
 		#visual.rotation = radians+deg_to_rad(180)+deg_to_rad(occluderoffset)
 
 func on_hover_start():
@@ -148,5 +163,4 @@ func mouse_click(_viewport : Node, _event: InputEvent, _shape_idx : int):
 	pass
 
 func _draw() -> void:
-	if (islight):
-		draw_circle(Vector2(0,0),radius,color,true,-1.0,true)
+	pass

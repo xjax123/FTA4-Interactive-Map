@@ -1,4 +1,5 @@
 extends Node2D
+class_name map_view
 
 enum ViewMode {
 	TGrid,

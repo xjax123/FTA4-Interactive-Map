@@ -10,10 +10,15 @@ var suncontainer : Node2D
 var orbitals : Array[Orbital2D]
 var objects : Array[StaticObject2D]
 
+var paused : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for child in get_children():
+		remove_child(child)
 	center = get_viewport().size/2
 	position = center
+	SysView.globaltimemod = System.TimeModifier
 	ModulateColor = System.ModulateColor
 	ModulateSunColor = System.ModulateSunColor
 	load_resource_to_shapes()
@@ -51,11 +56,15 @@ func load_resource_to_shapes() -> void:
 	var orbitaltemp = System.Orbitals
 	for orbital in orbitaltemp:
 		if (orbital.filetype == "Planet"):
-			var Temp = Planet2D.new(orbital.PlanetName,orbital.OrbitalOffset,ModulateColor, orbital.PlanetSize, orbital.PlanetColor, orbital.PositionAlongOrbit, orbital.Suborbitals, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
+			var Temp = Planet2D.new(orbital.PlanetName,orbital.OrbitalOffset,ModulateColor, orbital.PlanetSize, orbital.PlanetType, orbital.PlanetColor, orbital.PositionAlongOrbit, orbital.Suborbitals, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed,orbital.RotationSpeed,orbital.RotationDirection ,orbital.OrbitDirection)
 			add_child(Temp)
 			orbitals.append(Temp)
 		elif(orbital.filetype == "Asteroid"):
 			var Temp = AsteroidField2D.new(orbital.AsteroidAmmount, orbital.AsteroidSpawnRadius,orbital.AsteroidMinSize,orbital.AsteroidMaxSize,orbital.OrbitalOffset,ModulateColor, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
+			add_child(Temp)
+			orbitals.append(Temp)
+		elif(orbital.filetype == "Object"):
+			var Temp = OrbitalObject2D.new(orbital.ObjectName, orbital.ObjectDesctiption,orbital.CanvasTex,orbital.PositionAlongPath,orbital.ObjectTouchRange,orbital.OrbitalOffset,ModulateColor,orbital.DistanceFromStar,orbital.OrbitalPathThickness,orbital.OrbitalPathColor,true,orbital.OrbitalSpeed,orbital.OrbitDirection,7)
 			add_child(Temp)
 			orbitals.append(Temp)
 		else:
@@ -70,6 +79,8 @@ func load_resource_to_shapes() -> void:
 
 var ani_time : float = 0
 func _process(delta: float) -> void:
+	if paused:
+		return
 	ani_time += System.StarSpinSpeed*delta
 	var mod = 0
 	if(System.StarSpinDirection == SysView.OrbitDirection.Right):
@@ -91,3 +102,10 @@ func _draw():
 		pass
 	for orbital in orbitals:
 		orbital.queue_redraw()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause Rotation"):
+		if(paused == false):
+			paused = true
+		else:
+			paused = false

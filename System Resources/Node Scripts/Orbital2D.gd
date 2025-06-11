@@ -1,7 +1,8 @@
 extends Node2D
 class_name Orbital2D
 
-@export var OrbitalDistance : Vector2
+@export var OrbitalDistanceLM : Vector2
+var OrbitalDistance : Vector2
 @export var OrbitalPathWidth : float
 @export var OrbitalPathColor : Color
 @export var PathAntialiasing : bool
@@ -9,11 +10,14 @@ class_name Orbital2D
 @export var ModulateColor : Color
 @export var OrbitDirection : SysView.OrbitDirection
 var path : PackedVector2Array
-var line : Line2D
+var line : AntialiasedLine2D
 
-func _init(pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(100,100), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left) -> void:
+func _init(bufferdist : float, pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(100,100), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left) -> void:
 	position = pos
-	OrbitalDistance = distance
+	OrbitalDistanceLM = distance
+	OrbitalDistance = OrbitalDistanceLM*24
+	OrbitalDistance.x += bufferdist
+	OrbitalDistance.y += bufferdist
 	OrbitalPathWidth = pathwidth
 	OrbitalPathColor = pathcolor
 	PathAntialiasing = antialiased
@@ -35,7 +39,7 @@ func _ready() -> void:
 		var currentposonpath = Vector2(px,py)
 		path.append(currentposonpath)
 		x +=1
-	line = Line2D.new()
+	line = AntialiasedLine2D.new()
 	line.points = path
 	line.closed = true
 	line.width = OrbitalPathWidth
@@ -45,6 +49,9 @@ func _ready() -> void:
 
 func _progress_along_orbit(_delta) -> void:
 	pass
+
+func _process(delta: float) -> void:
+	line.width = 1 / get_viewport().get_camera_2d().zoom.x * 2.5
 
 func _draw() -> void:
 	pass

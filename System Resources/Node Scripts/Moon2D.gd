@@ -36,6 +36,7 @@ func _init(_pos : Vector2 = Vector2(0,0), _modulatecolor : Color = Color(1,1,1),
 	timemod = SysView.globaltimemod
 	
 	circle = PlanetCircle.new(MoonName,_pos,_type,_modulatecolor,true,7,7,false,0,MoonSize,MoonColor,_occluderoffset)
+	circle.update_label_scale(Vector2(0.75,0.75))
 	add_child(circle)
 
 func _ready() -> void:
@@ -47,6 +48,7 @@ func _progress_along_orbit(delta):
 	ani_time += MoonSpeed*delta
 	spin_time += RotationSpeed*delta
 	
+	var labelsize = circle.get_label_size()
 	var spinmod = 0
 	if(RotationDirection == SysView.OrbitDirection.Right):
 		spinmod = timemod
@@ -72,11 +74,12 @@ func _progress_along_orbit(delta):
 		ani_time = 0
 	circle.position = currentposonpath
 	circle.update_occluder(degrees)
+	var scaling = Vector2(1 / get_viewport().get_camera_2d().zoom.x, 1 / get_viewport().get_camera_2d().zoom.y)*1.5
 	if rad_to_deg(degrees) > 0 && rad_to_deg(degrees) <= 90:
-		circle.update_label_position(Vector2(5+MoonSize,-5))
+		circle.update_label_position(Vector2(MoonSize,MoonSize)*scaling)
 	elif rad_to_deg(degrees) > 90 && rad_to_deg(degrees) <= 180:
-		circle.update_label_position(Vector2(-40-MoonSize,-5))
+		circle.update_label_position(Vector2(-labelsize.x-MoonSize,MoonSize/2)*scaling)
 	elif rad_to_deg(degrees) > 180 && rad_to_deg(degrees) <= 270:
-		circle.update_label_position(Vector2(-40-MoonSize,-20))
+		circle.update_label_position(Vector2(-labelsize.x-MoonSize,-MoonSize-labelsize.y)*scaling)
 	else:
-		circle.update_label_position(Vector2(5+MoonSize,-20))
+		circle.update_label_position(Vector2(MoonSize,-MoonSize-labelsize.y)*scaling)

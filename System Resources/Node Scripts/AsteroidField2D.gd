@@ -4,16 +4,18 @@ class_name AsteroidField2D
 var timemod : float = 1000
 
 @export var AsteroidAmmount : float = 500
-@export var AsteroidSpawnRadius : float = 10
+@export var AsteroidSpawnRadiusLM : float = 10
+var AsteroidSpawnRadius : float
 @export var AsteroidMinSize : float = 1
 @export var AsteroidMaxSize : float = 4
 
 var Asteroids : Array[Asteroid2D] = []
 var degrees
-func _init(ammount : int = 500, spawnradius : float = 10, minsize : float = 1, maxsize : float = 4, pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(0,0), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left):
-	super._init(pos,modulatecolor,distance,pathwidth,pathcolor,antialiased,speed,direction)
+func _init(bufferdist : float, ammount : int = 500, spawnradius : float = 10, minsize : float = 1, maxsize : float = 4, pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(0,0), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left):
+	super._init(bufferdist, pos,modulatecolor,distance,pathwidth,pathcolor,antialiased,speed,direction)
 	AsteroidAmmount = round(ammount)
-	AsteroidSpawnRadius = spawnradius
+	AsteroidSpawnRadiusLM = spawnradius
+	AsteroidSpawnRadius = AsteroidSpawnRadiusLM*24
 	AsteroidMinSize = minsize
 	AsteroidMaxSize = maxsize
 	timemod = SysView.globaltimemod

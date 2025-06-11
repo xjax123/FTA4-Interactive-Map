@@ -134,10 +134,7 @@ func _ready() -> void:
 	TouchArea = Area2D.new()
 	var Shape = CollisionShape2D.new()
 	var circ = CircleShape2D.new()
-	if (radius+10 > radius*2):
-		circ.radius = radius*2
-	else:
-		circ.radius = radius+10
+	circ.radius = radius
 	Shape.shape = circ
 	TouchArea.add_child(Shape)
 	add_child(TouchArea)

@@ -16,8 +16,8 @@ var TouchArea : Area2D
 var container : Node2D
 var timemod
 
-func _init(_name : StringName = "DefaultName", _description : String = "", _texture : CanvasTexture = CanvasTexture.new(), _posalongpath : float = 0.0, _touchrange : float = 10,pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(100,100), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left, _lightmask : int = 1) -> void:
-	super._init(pos,modulatecolor,distance,pathwidth,pathcolor,antialiased,speed,direction)
+func _init(bufferdist : float, _name : StringName = "DefaultName", _description : String = "", _texture : CanvasTexture = CanvasTexture.new(), _posalongpath : float = 0.0, _touchrange : float = 10,pos : Vector2 = Vector2(0,0), modulatecolor : Color = Color(1,1,1), distance : Vector2 = Vector2(100,100), pathwidth : float = 3.0, pathcolor : Color = Color(1,1,1), antialiased : bool = true, speed : float = 1, direction : SysView.OrbitDirection = SysView.OrbitDirection.Left, _lightmask : int = 1) -> void:
+	super._init(bufferdist,pos,modulatecolor,distance,pathwidth,pathcolor,antialiased,speed,direction)
 	ObjectName = _name
 	ObjectDesctiption = _description
 	CanvasTex = _texture

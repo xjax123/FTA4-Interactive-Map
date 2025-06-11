@@ -22,7 +22,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(-5, -10)
 OrbitalPathColor = Color(0.450648, 0.450648, 0.450648, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(100, 100)
+DistanceFromStarLM = Vector2(3.2, 3.2)
 OrbitalSpeed = 4.2
 OrbitDirection = 1
 
@@ -39,7 +39,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 10)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(150, 150)
+DistanceFromStarLM = Vector2(6, 6)
 OrbitalSpeed = 1.4
 OrbitDirection = 1
 
@@ -75,7 +75,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([SubResource("Resource_20ame")])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(200, 200)
+DistanceFromStarLM = Vector2(8.2, 8.2)
 OrbitalSpeed = 1.0
 OrbitDirection = 1
 
@@ -92,20 +92,20 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(20, -20)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(280, 280)
+DistanceFromStarLM = Vector2(13, 13)
 OrbitalSpeed = 0.53
 OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_sfk5c"]
 script = ExtResource("4_x6jpr")
 AsteroidAmmount = 500
-AsteroidSpawnRadius = 60.0
+AsteroidSpawnRadius = 5.0
 AsteroidMinSize = 1.0
 AsteroidMaxSize = 4.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.0784314)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(500, 500)
+DistanceFromStarLM = Vector2(25, 25)
 OrbitalSpeed = 0.2
 OrbitDirection = 1
 
@@ -122,7 +122,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(800, 800)
+DistanceFromStarLM = Vector2(43, 43)
 OrbitalSpeed = 0.08
 OrbitDirection = 1
 
@@ -148,7 +148,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([SubResource("Resource_3l1d4")])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(1250, 1250)
+DistanceFromStarLM = Vector2(80, 80)
 OrbitalSpeed = 0.03
 OrbitDirection = 1
 
@@ -165,7 +165,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(1800, 1800)
+DistanceFromStarLM = Vector2(160, 160)
 OrbitalSpeed = 0.01
 OrbitDirection = 1
 
@@ -182,7 +182,7 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(2800, 2800)
+DistanceFromStarLM = Vector2(250, 250)
 OrbitalSpeed = 0.006
 OrbitDirection = 1
 
@@ -199,31 +199,33 @@ Suborbitals = Array[ExtResource("2_v66vf")]([])
 OrbitalOffset = Vector2(1000, -1000)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(4000, 4000)
+DistanceFromStarLM = Vector2(330, 330)
 OrbitalSpeed = 0.004
 OrbitDirection = 1
 
 [sub_resource type="Resource" id="Resource_byet2"]
 script = ExtResource("4_x6jpr")
 AsteroidAmmount = 2000
-AsteroidSpawnRadius = 750.0
+AsteroidSpawnRadius = 35.0
 AsteroidMinSize = 2.0
 AsteroidMaxSize = 6.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.0784314)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(4000, 4000)
+DistanceFromStarLM = Vector2(330, 330)
 OrbitalSpeed = 0.004
 OrbitDirection = 1
 
 [resource]
 script = ExtResource("5_abhon")
 SystemDescription = ""
+Year = 1
 ModulateColor = Color(0.111197, 0.111197, 0.111197, 1)
 ModulateSunColor = Color(1, 1, 1, 1)
-TimeModifier = 1000.0
+TimeModifier = 1e+17
 StarType = 0
-StarSpinSpeed = 0.1
+bufferdistance = 50.0
+StarSpinSpeed = 0.0
 StarSpinDirection = 0
 StarSizes = Array[int]([50, 5, 5])
 StarGap = 10

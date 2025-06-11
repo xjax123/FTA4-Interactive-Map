@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Background.gd" id="1_efyy8"]
 [ext_resource type="Script" path="res://Scripts/system_viewer.gd" id="1_qm6su"]
 [ext_resource type="Script" path="res://Scripts/Main_Camera.gd" id="3_wurvj"]
-[ext_resource type="Resource" uid="uid://c65kcuusg3csw" path="res://System Resources/Resources/Systems/Sol.tres" id="4_lpfn8"]
+[ext_resource type="Resource" uid="uid://dr3vtspliva37" path="res://System Resources/Resources/Systems/Epsilon Edani.tres" id="4_aakc6"]
 
 [node name="System Viewer" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -24,7 +24,7 @@ metadata/_edit_lock_ = true
 [node name="System Viewer" type="Node2D" parent="."]
 position = Vector2(1, 1)
 script = ExtResource("1_qm6su")
-System = ExtResource("4_lpfn8")
+System = ExtResource("4_aakc6")
 
 [node name="System Camera" type="Camera2D" parent="."]
 position = Vector2(961, 542)

@@ -7,7 +7,7 @@ var filetype : String
 @export var OrbitalOffset : Vector2 = Vector2(0,0)
 @export var OrbitalPathColor : Color = Color(1,1,1)
 @export var OrbitalPathThickness : float = 3.0
-@export var DistanceFromStar : Vector2 = Vector2(100,100)
+@export var DistanceFromStarLM : Vector2 = Vector2(100,100)
 @export var OrbitalSpeed : float = 1
 @export var OrbitDirection : SysView.OrbitDirection = SysView.OrbitDirection.Left
 
@@ -16,6 +16,6 @@ func _init(orbitaloffset : Vector2 = Vector2(0,0), pathcol : Color = Color(1,1,1
 	OrbitalOffset = orbitaloffset
 	OrbitalPathColor = pathcol
 	OrbitalPathThickness = width
-	DistanceFromStar = distance
+	DistanceFromStarLM = distance
 	OrbitalSpeed = speed
 	OrbitDirection = direction

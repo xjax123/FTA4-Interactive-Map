@@ -1,0 +1,358 @@
+[gd_resource type="Resource" script_class="SysManifest" load_steps=28 format=3 uid="uid://dr3vtspliva37"]
+
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Orbital.gd" id="1_w5mxu"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Suborbital.gd" id="2_ab8ab"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/Planet.gd" id="3_au336"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/Moon.gd" id="3_vow5h"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Orbitals/AsteroidField.gd" id="4_c83ix"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Objects/StellarObject.gd" id="4_s8vbn"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/SysManifest.gd" id="5_3qira"]
+[ext_resource type="Script" path="res://System Resources/Resource Scripts/Suborbitals/PlanetRings.gd" id="6_wfxod"]
+
+[sub_resource type="Resource" id="Resource_r0q52"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Hugin"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 2.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 5.0
+RotationSpeed = 0.1
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.27
+radius = 20.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_7or2y"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Munin"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 3.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 3.0
+RotationSpeed = 3.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.875
+radius = 40.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_w6nm2"]
+script = ExtResource("3_au336")
+PlanetName = &"Tirak "
+PlanetSize = 10
+PlanetType = 2
+PlanetColor = Color(0.927184, 0.417336, 0.344612, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.63
+Suborbitals = Array[ExtResource("2_ab8ab")]([SubResource("Resource_r0q52"), SubResource("Resource_7or2y")])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 1)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(6, 6)
+OrbitalSpeed = 2.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_yh55n"]
+script = ExtResource("4_c83ix")
+AsteroidAmmount = 500
+AsteroidSpawnRadius = 0.7
+AsteroidMinSize = 1.0
+AsteroidMaxSize = 2.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.0784314)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(10, 10)
+OrbitalSpeed = 1.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_sevlp"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Orvas"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 2.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 24.0
+RotationSpeed = 2.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.629
+radius = 40.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_tb4tc"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Delkhar"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 4.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 16.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.42
+radius = 55.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_qrbub"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Caesyr"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 5.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 12.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.44
+radius = 85.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_c5m56"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Veltrass Minor"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 4.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 8.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.76
+radius = 115.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_q6ayg"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Myrrak"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 3.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 4.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.375
+radius = 145.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_fv5xc"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0784314)
+MoonName = &"Xirellon"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 2.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 0.25
+RotationSpeed = 1.2
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.68
+radius = 165.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_0cefi"]
+script = ExtResource("3_au336")
+PlanetName = &"Veltrass "
+PlanetSize = 30
+PlanetType = 2
+PlanetColor = Color(0.928188, 0.603225, 0.289506, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.23
+Suborbitals = Array[ExtResource("2_ab8ab")]([SubResource("Resource_sevlp"), SubResource("Resource_tb4tc"), SubResource("Resource_qrbub"), SubResource("Resource_c5m56"), SubResource("Resource_q6ayg"), SubResource("Resource_fv5xc")])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 1)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(20, 20)
+OrbitalSpeed = 1.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_rekv3"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0196078)
+MoonName = &"Solentha"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 4.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 20.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.855
+radius = 35.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_ni16x"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0196078)
+MoonName = &"Karaveth"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 7.0
+MoonColor = Color(0.333333, 0.333333, 0.333333, 1)
+MoonSpeed = 15.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.056
+radius = 60.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_wy7fj"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0196078)
+MoonName = &"Elyrun"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 5.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 10.0
+RotationSpeed = 1.0
+MoonDirection = 0
+RotationDirection = 0
+StartingOffset = 0.315
+radius = 80.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_qc7rx"]
+script = ExtResource("3_au336")
+PlanetName = &"Vireya "
+PlanetSize = 20
+PlanetType = 2
+PlanetColor = Color(0.479028, 0.297231, 0.779238, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.708
+Suborbitals = Array[ExtResource("2_ab8ab")]([SubResource("Resource_rekv3"), SubResource("Resource_ni16x"), SubResource("Resource_wy7fj")])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 1)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(40, 40)
+OrbitalSpeed = 0.5
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_2nyyu"]
+script = ExtResource("4_c83ix")
+AsteroidAmmount = 2000
+AsteroidSpawnRadius = 10.0
+AsteroidMinSize = 2.0
+AsteroidMaxSize = 6.0
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 0.0784314)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(80, 80)
+OrbitalSpeed = 1.0
+OrbitDirection = 0
+
+[sub_resource type="Resource" id="Resource_7sem5"]
+script = ExtResource("6_wfxod")
+modulatecolor = Color(0.837399, 1, 0.984019, 1)
+width = 20.0
+resolution = 360
+radius = 80.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_4wn7n"]
+script = ExtResource("3_vow5h")
+ShowPath = true
+PathWidth = 2.0
+Pathcolor = Color(1, 1, 1, 0.0196078)
+MoonName = &"Alvoth"
+MoonDesc = ""
+MoonType = 0
+MoonSize = 8.0
+MoonColor = Color(1, 1, 1, 1)
+MoonSpeed = 1.0
+RotationSpeed = 1.0
+MoonDirection = 1
+RotationDirection = 0
+StartingOffset = 0.515
+radius = 120.0
+offset = Vector2(0, 0)
+zindex = 1
+
+[sub_resource type="Resource" id="Resource_vrj48"]
+script = ExtResource("3_au336")
+PlanetName = &"Elistara "
+PlanetSize = 45
+PlanetType = 2
+PlanetColor = Color(0.653956, 0.888907, 0.987368, 1)
+RotationSpeed = 1.0
+RotationDirection = 0
+PositionAlongOrbit = 0.54
+Suborbitals = Array[ExtResource("2_ab8ab")]([SubResource("Resource_7sem5"), SubResource("Resource_4wn7n")])
+OrbitalOffset = Vector2(0, 0)
+OrbitalPathColor = Color(1, 1, 1, 1)
+OrbitalPathThickness = 3.0
+DistanceFromStarLM = Vector2(140, 140)
+OrbitalSpeed = 0.25
+OrbitDirection = 0
+
+[resource]
+script = ExtResource("5_3qira")
+SystemDescription = ""
+Year = 1
+ModulateColor = Color(0.15, 0.15, 0.15, 1)
+ModulateSunColor = Color(1, 1, 1, 1)
+TimeModifier = 1000.0
+StarType = 0
+bufferdistance = 5.0
+StarSpinSpeed = 0.1
+StarSpinDirection = 0
+StarSizes = Array[int]([60, 5, 5])
+StarGap = 10
+StarColors = Array[Color]([Color(0.993577, 0.692589, 0.0734359, 1), Color(0.866667, 0.623529, 0, 1), Color(0.901961, 0.258824, 0, 1)])
+Orbitals = Array[ExtResource("1_w5mxu")]([SubResource("Resource_w6nm2"), SubResource("Resource_yh55n"), SubResource("Resource_0cefi"), SubResource("Resource_qc7rx"), SubResource("Resource_2nyyu"), SubResource("Resource_vrj48")])
+StaticObjects = Array[ExtResource("4_s8vbn")]([])

@@ -18,7 +18,7 @@ AsteroidMaxSize = 4.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(150, 130)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 5.0
 OrbitDirection = 0
 
@@ -31,7 +31,7 @@ AsteroidMaxSize = 4.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 1.3
-DistanceFromStar = Vector2(200, 250)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 1.0
 OrbitDirection = 0
 
@@ -48,7 +48,7 @@ Suborbitals = Array[ExtResource("3_afgyw")]([])
 OrbitalOffset = Vector2(0, 50)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(450, 420)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 1.0
 OrbitDirection = 0
 
@@ -93,7 +93,7 @@ Suborbitals = Array[ExtResource("3_afgyw")]([SubResource("Resource_oehr0"), SubR
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(600, 700)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 0.21
 OrbitDirection = 0
 
@@ -110,7 +110,7 @@ Suborbitals = Array[ExtResource("3_afgyw")]([])
 OrbitalOffset = Vector2(-50, -50)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(800, 820)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 0.45
 OrbitDirection = 0
 
@@ -123,7 +123,7 @@ AsteroidMaxSize = 4.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(1000, 1000)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 0.1
 OrbitDirection = 0
 
@@ -132,10 +132,12 @@ script = ExtResource("6_5idfw")
 SystemDescription = "Preliminary orbital surveys indicate that the primary habitable world was once an agro-world, though one who's primary purpose is long abandoned. There are various climate-adjustment facilities in orbit, though they seem very derelict. 
 
 Later surveys reveal XV-02 has been effectively abandoned for centuries, though even today there are random ships occasionally landing on it to collect up food, water or simply hide out while conducting repairs or R&R. You have a pretty strong suspicion that there are various small communities who are laying low with the sudden arrival of a rather large number of large ships."
+Year = 1
 ModulateColor = Color(0.15, 0.15, 0.15, 1)
 ModulateSunColor = Color(1, 1, 1, 1)
 TimeModifier = 1000.0
 StarType = 1
+bufferdistance = 5.0
 StarSpinSpeed = 0.2
 StarSpinDirection = 1
 StarSizes = Array[int]([50, 40, 5])

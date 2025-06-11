@@ -21,7 +21,7 @@ Suborbitals = Array[ExtResource("2_e72cr")]([])
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(75, 60)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 2.0
 OrbitDirection = 0
 
@@ -38,17 +38,19 @@ ObjectTouchRange = 10.0
 OrbitalOffset = Vector2(0, 0)
 OrbitalPathColor = Color(1, 1, 1, 0.392157)
 OrbitalPathThickness = 3.0
-DistanceFromStar = Vector2(130, 130)
+DistanceFromStarLM = Vector2(100, 100)
 OrbitalSpeed = 2.0
 OrbitDirection = 0
 
 [resource]
 script = ExtResource("5_skoef")
 SystemDescription = "A system of little value in the system itself, it serves as an important strategic stronghold between the T-Grid and the Hypergrid."
+Year = 1
 ModulateColor = Color(0.15, 0.15, 0.15, 1)
 ModulateSunColor = Color(1, 1, 1, 1)
 TimeModifier = 1000.0
 StarType = 0
+bufferdistance = 5.0
 StarSpinSpeed = 0.1
 StarSpinDirection = 0
 StarSizes = Array[int]([20])

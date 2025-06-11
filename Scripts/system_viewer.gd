@@ -11,6 +11,7 @@ var orbitals : Array[Orbital2D]
 var objects : Array[StaticObject2D]
 
 var paused : bool = false
+var showNames : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +20,7 @@ func _ready() -> void:
 	center = get_viewport().size/2
 	position = center
 	SysView.globaltimemod = System.TimeModifier
+	SysView.globalyear = System.Year
 	ModulateColor = System.ModulateColor
 	ModulateSunColor = System.ModulateSunColor
 	load_resource_to_shapes()
@@ -56,19 +58,19 @@ func load_resource_to_shapes() -> void:
 	var orbitaltemp = System.Orbitals
 	for orbital in orbitaltemp:
 		if (orbital.filetype == "Planet"):
-			var Temp = Planet2D.new(orbital.PlanetName,orbital.OrbitalOffset,ModulateColor, orbital.PlanetSize, orbital.PlanetType, orbital.PlanetColor, orbital.PositionAlongOrbit, orbital.Suborbitals, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed,orbital.RotationSpeed,orbital.RotationDirection ,orbital.OrbitDirection)
+			var Temp = Planet2D.new(System.bufferdistance, orbital.PlanetName,orbital.OrbitalOffset,ModulateColor, orbital.PlanetSize, orbital.PlanetType, orbital.PlanetColor, orbital.PositionAlongOrbit, orbital.Suborbitals, orbital.DistanceFromStarLM, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed,orbital.RotationSpeed,orbital.RotationDirection ,orbital.OrbitDirection)
 			add_child(Temp)
 			orbitals.append(Temp)
 		elif(orbital.filetype == "Asteroid"):
-			var Temp = AsteroidField2D.new(orbital.AsteroidAmmount, orbital.AsteroidSpawnRadius,orbital.AsteroidMinSize,orbital.AsteroidMaxSize,orbital.OrbitalOffset,ModulateColor, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
+			var Temp = AsteroidField2D.new(System.bufferdistance, orbital.AsteroidAmmount, orbital.AsteroidSpawnRadius,orbital.AsteroidMinSize,orbital.AsteroidMaxSize,orbital.OrbitalOffset,ModulateColor, orbital.DistanceFromStarLM, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
 			add_child(Temp)
 			orbitals.append(Temp)
 		elif(orbital.filetype == "Object"):
-			var Temp = OrbitalObject2D.new(orbital.ObjectName, orbital.ObjectDesctiption,orbital.CanvasTex,orbital.PositionAlongPath,orbital.ObjectTouchRange,orbital.OrbitalOffset,ModulateColor,orbital.DistanceFromStar,orbital.OrbitalPathThickness,orbital.OrbitalPathColor,true,orbital.OrbitalSpeed,orbital.OrbitDirection,7)
+			var Temp = OrbitalObject2D.new(System.bufferdistance, orbital.ObjectName, orbital.ObjectDesctiption,orbital.CanvasTex,orbital.PositionAlongPath,orbital.ObjectTouchRange,orbital.OrbitalOffset,ModulateColor,orbital.DistanceFromStarLM,orbital.OrbitalPathThickness,orbital.OrbitalPathColor,true,orbital.OrbitalSpeed,orbital.OrbitDirection,7)
 			add_child(Temp)
 			orbitals.append(Temp)
 		else:
-			var Temp = Orbital2D.new(orbital.OrbitalOffset,ModulateColor, orbital.DistanceFromStar, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
+			var Temp = Orbital2D.new(System.bufferdistance, orbital.OrbitalOffset,ModulateColor, orbital.DistanceFromStarLM, orbital.OrbitalPathThickness, orbital.OrbitalPathColor, true, orbital.OrbitalSpeed, orbital.OrbitDirection)
 			add_child(Temp)
 			orbitals.append(Temp)
 		
@@ -109,3 +111,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			paused = true
 		else:
 			paused = false
+			
+	if event.is_action_pressed("Show Names"):
+		if(showNames == false):
+			showNames = true
+			SysView.forceShowNamesOn.emit()
+		else:
+			showNames = false
+			SysView.forceShowNamesOff.emit()
